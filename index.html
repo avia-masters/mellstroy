@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
     <title>MELLSTROY КАЗИНО — официальный сайт для СНГ</title>
     <meta name="description" content="Официальный сайт MELLSTROY КАЗИНО для СНГ: вход, регистрация, бонусы, слоты, провайдеры, приложение, платежи, отзывы и правила.">
-    <meta name="theme-color" content="#070611">
+    <meta name="theme-color" content="#eef2f7">
     <link rel="canonical" href="https://ваш-сайт.com/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="MELLSTROY КАЗИНО — официальный сайт для СНГ">
@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
-        /* ===== ОБНУЛЕНИЕ И БАЗА ===== */
+        /* ===== ОБНУЛЕНИЕ И БАЗА (светлая тема) ===== */
         * {
             margin: 0;
             padding: 0;
@@ -27,8 +27,8 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #070611;
-            color: #e0e0e0;
+            background: #eef2f7;
+            color: #1a2332;
             line-height: 1.6;
         }
 
@@ -39,12 +39,12 @@
         }
 
         a {
-            color: #f5c842;
+            color: #2a7de1;
             text-decoration: none;
         }
 
         a:hover {
-            color: #ffd95e;
+            color: #1a5fb4;
         }
 
         /* ===== СКИП-ССЫЛКА ===== */
@@ -52,8 +52,8 @@
             position: absolute;
             top: -100px;
             left: 10px;
-            background: #f5c842;
-            color: #070611;
+            background: #2a7de1;
+            color: #fff;
             padding: 10px 20px;
             border-radius: 0 0 8px 8px;
             z-index: 1000;
@@ -66,12 +66,13 @@
 
         /* ===== ШАПКА ===== */
         .site-header {
-            background: #0b0e14;
-            padding: 16px 0;
-            border-bottom: 2px solid #1f2a36;
+            background: #ffffff;
+            padding: 12px 0;
+            border-bottom: 2px solid #d0d9e6;
             position: sticky;
             top: 0;
             z-index: 100;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
         }
 
         .header-row {
@@ -79,25 +80,29 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
+            gap: 10px;
         }
 
         .brand {
-            font-size: 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 22px;
             font-weight: 800;
-            color: #f5c842;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            color: #1a2332;
         }
 
-        .brand span {
-            color: #ffffff;
+        .brand img {
+            height: 44px;
+            width: auto;
+            display: block;
         }
 
         .menu-button {
             display: none;
             background: none;
-            border: 1px solid #2a3a4a;
-            color: #e0e0e0;
+            border: 1px solid #c0cbd8;
+            color: #1a2332;
             padding: 8px 16px;
             border-radius: 8px;
             cursor: pointer;
@@ -107,19 +112,19 @@
         .main-nav {
             display: flex;
             align-items: center;
-            gap: 10px 18px;
+            gap: 10px 20px;
             flex-wrap: wrap;
         }
 
         .main-nav a {
-            color: #b0c4de;
+            color: #2c3e5a;
             font-weight: 500;
             font-size: 15px;
             transition: 0.3s;
         }
 
         .main-nav a:hover {
-            color: #f5c842;
+            color: #2a7de1;
         }
 
         .header-actions {
@@ -129,11 +134,11 @@
         }
 
         .age-badge {
-            background: #1f2a36;
+            background: #d0d9e6;
             padding: 4px 12px;
             border-radius: 20px;
             font-weight: 700;
-            color: #f5c842;
+            color: #1a2332;
             font-size: 13px;
         }
 
@@ -150,24 +155,25 @@
         }
 
         .btn.primary {
-            background: #f5c842;
-            color: #0b0e14;
+            background: #2a7de1;
+            color: #ffffff;
         }
 
         .btn.primary:hover {
-            background: #ffd95e;
+            background: #1a5fb4;
             transform: scale(1.04);
+            box-shadow: 0 4px 16px rgba(42, 125, 225, 0.3);
         }
 
         .btn.ghost {
             background: transparent;
-            color: #b0c4de;
-            border: 1px solid #2a3a4a;
+            color: #2c3e5a;
+            border: 1px solid #c0cbd8;
         }
 
         .btn.ghost:hover {
-            border-color: #f5c842;
-            color: #f5c842;
+            border-color: #2a7de1;
+            color: #2a7de1;
         }
 
         .btn.large {
@@ -177,8 +183,8 @@
 
         /* ===== ГЕРОЙ ===== */
         .page-hero {
-            padding: 60px 0;
-            background: linear-gradient(145deg, #070611 0%, #141a24 100%);
+            padding: 50px 0 60px;
+            background: linear-gradient(145deg, #eef2f7 0%, #dce4ee 100%);
             border-radius: 0 0 40px 40px;
         }
 
@@ -191,18 +197,18 @@
 
         .eyebrow {
             display: inline-block;
-            background: #1f2a36;
+            background: #d0d9e6;
             padding: 4px 16px;
             border-radius: 20px;
             font-size: 13px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: #8aa0b8;
+            color: #2c3e5a;
             margin-bottom: 12px;
         }
 
         .gradient-text {
-            background: linear-gradient(135deg, #f5c842, #f7d97e);
+            background: linear-gradient(135deg, #2a7de1, #5ba0f0);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -211,11 +217,12 @@
             font-size: 44px;
             font-weight: 800;
             margin-bottom: 16px;
+            color: #1a2332;
         }
 
         .page-hero p {
             font-size: 18px;
-            color: #b8c9e0;
+            color: #2c3e5a;
             max-width: 600px;
             margin-bottom: 24px;
         }
@@ -230,10 +237,11 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
-            background: #0b0e14;
-            border: 1px solid #1f2a36;
+            background: #ffffff;
+            border: 1px solid #d0d9e6;
             border-radius: 20px;
             padding: 30px 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
         }
 
         .stats-card div {
@@ -243,11 +251,11 @@
         .stats-card strong {
             display: block;
             font-size: 32px;
-            color: #f5c842;
+            color: #2a7de1;
         }
 
         .stats-card span {
-            color: #8aa0b8;
+            color: #2c3e5a;
             font-size: 14px;
         }
 
@@ -257,7 +265,7 @@
         }
 
         .section.soft {
-            background: #0b0e14;
+            background: #f5f8fc;
         }
 
         .trust-grid {
@@ -268,64 +276,66 @@
         }
 
         .trust-card {
-            background: #0b0e14;
-            border: 1px solid #1f2a36;
+            background: #ffffff;
+            border: 1px solid #d0d9e6;
             border-radius: 16px;
             padding: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
 
         .trust-card .trust-icon {
             display: inline-block;
-            background: #1f2a36;
+            background: #e6edf5;
             padding: 6px 14px;
             border-radius: 30px;
             font-size: 13px;
             font-weight: 700;
-            color: #f5c842;
+            color: #2a7de1;
             margin-bottom: 10px;
         }
 
         .trust-card strong {
             display: block;
             font-size: 18px;
-            color: #fff;
+            color: #1a2332;
             margin-bottom: 6px;
         }
 
         .trust-card span {
-            color: #8aa0b8;
+            color: #2c3e5a;
             font-size: 14px;
         }
 
         .security-status {
             font-size: 14px;
-            color: #6a7f94;
+            color: #5a6f88;
             padding: 16px 0;
-            border-top: 1px solid #1f2a36;
-            border-bottom: 1px solid #1f2a36;
+            border-top: 1px solid #d0d9e6;
+            border-bottom: 1px solid #d0d9e6;
             margin-bottom: 30px;
         }
 
         .security-status a {
-            color: #8aa0b8;
+            color: #2a7de1;
         }
 
         /* ===== НАВИГАЦИЯ ПО ОБЗОРУ ===== */
         .overview-nav {
-            background: #0b0e14;
-            border: 1px solid #1f2a36;
+            background: #ffffff;
+            border: 1px solid #d0d9e6;
             border-radius: 16px;
             padding: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
 
         .overview-nav h2 {
-            color: #f5c842;
+            color: #1a2332;
             font-size: 22px;
             margin-bottom: 8px;
         }
 
         .overview-nav p {
-            color: #8aa0b8;
+            color: #2c3e5a;
             margin-bottom: 16px;
         }
 
@@ -337,17 +347,17 @@
 
         .overview-links a {
             font-size: 14px;
-            color: #b0c4de;
-            background: #141a24;
+            color: #2c3e5a;
+            background: #f5f8fc;
             padding: 4px 14px;
             border-radius: 20px;
-            border: 1px solid #1f2a36;
+            border: 1px solid #d0d9e6;
             transition: 0.3s;
         }
 
         .overview-links a:hover {
-            border-color: #f5c842;
-            color: #f5c842;
+            border-color: #2a7de1;
+            color: #2a7de1;
         }
 
         /* ===== СЕКЦИЯ ДЕЙСТВИЙ ===== */
@@ -365,7 +375,15 @@
 
         .section-head h2 {
             font-size: 30px;
-            color: #fff;
+            color: #1a2332;
+        }
+
+        .section-head a {
+            color: #2a7de1;
+        }
+
+        .section-head a:hover {
+            color: #1a5fb4;
         }
 
         .feature-grid {
@@ -375,27 +393,29 @@
         }
 
         .feature-grid a {
-            background: #141a24;
-            border: 1px solid #1f2a36;
+            background: #ffffff;
+            border: 1px solid #d0d9e6;
             border-radius: 16px;
             padding: 24px;
             transition: 0.3s;
             text-decoration: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
 
         .feature-grid a:hover {
-            border-color: #f5c842;
+            border-color: #2a7de1;
             transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(42, 125, 225, 0.12);
         }
 
         .feature-grid a strong {
             display: block;
-            color: #fff;
+            color: #1a2332;
             font-size: 18px;
         }
 
         .feature-grid a span {
-            color: #8aa0b8;
+            color: #2c3e5a;
             font-size: 14px;
         }
 
@@ -408,7 +428,7 @@
 
         .prose h2 {
             font-size: 26px;
-            color: #f5c842;
+            color: #1a2332;
             margin: 40px 0 12px;
             padding-top: 10px;
         }
@@ -418,12 +438,12 @@
         }
 
         .prose p {
-            color: #d0dcec;
+            color: #1a2332;
             margin-bottom: 16px;
         }
 
         .prose a {
-            color: #f5c842;
+            color: #2a7de1;
         }
 
         .table-wrap {
@@ -433,15 +453,16 @@
 
         .table-wrap table {
             width: 100%;
-            background: #0b0e14;
+            background: #ffffff;
             border-radius: 12px;
             border-collapse: collapse;
             font-size: 15px;
+            border: 1px solid #d0d9e6;
         }
 
         .table-wrap th {
-            background: #141a24;
-            color: #f5c842;
+            background: #e6edf5;
+            color: #1a2332;
             padding: 14px 18px;
             text-align: left;
             font-weight: 600;
@@ -449,8 +470,8 @@
 
         .table-wrap td {
             padding: 12px 18px;
-            border-bottom: 1px solid #1f2a36;
-            color: #d0dcec;
+            border-bottom: 1px solid #d0d9e6;
+            color: #1a2332;
         }
 
         .table-wrap tr:last-child td {
@@ -465,27 +486,27 @@
         }
 
         .fact-list div {
-            background: #0b0e14;
-            border: 1px solid #1f2a36;
+            background: #ffffff;
+            border: 1px solid #d0d9e6;
             border-radius: 12px;
             padding: 16px 20px;
         }
 
         .fact-list div strong {
             display: block;
-            color: #f5c842;
+            color: #2a7de1;
             font-size: 15px;
         }
 
         .fact-list div span {
-            color: #8aa0b8;
+            color: #2c3e5a;
             font-size: 14px;
         }
 
         /* ===== FAQ ===== */
         .faq details {
-            background: #0b0e14;
-            border: 1px solid #1f2a36;
+            background: #ffffff;
+            border: 1px solid #d0d9e6;
             border-radius: 12px;
             padding: 16px 20px;
             margin-bottom: 10px;
@@ -493,17 +514,17 @@
 
         .faq summary {
             font-weight: 600;
-            color: #fff;
+            color: #1a2332;
             cursor: pointer;
             font-size: 17px;
         }
 
         .faq summary:hover {
-            color: #f5c842;
+            color: #2a7de1;
         }
 
         .faq details p {
-            color: #b8c9e0;
+            color: #2c3e5a;
             padding-top: 12px;
             margin: 0;
         }
@@ -519,16 +540,18 @@
         }
 
         .content-card {
-            background: #0b0e14;
-            border: 1px solid #1f2a36;
+            background: #ffffff;
+            border: 1px solid #d0d9e6;
             border-radius: 16px;
             overflow: hidden;
             transition: 0.3s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
 
         .content-card:hover {
-            border-color: #f5c842;
+            border-color: #2a7de1;
             transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(42, 125, 225, 0.12);
         }
 
         .content-card a {
@@ -542,6 +565,7 @@
             height: 180px;
             object-fit: cover;
             display: block;
+            background: #e6edf5;
         }
 
         .card-copy {
@@ -550,19 +574,19 @@
 
         .card-copy span {
             font-size: 13px;
-            color: #8aa0b8;
+            color: #2c3e5a;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
         .card-copy h2 {
             font-size: 18px;
-            color: #fff;
+            color: #1a2332;
             margin: 4px 0 8px;
         }
 
         .card-copy p {
-            color: #b8c9e0;
+            color: #2c3e5a;
             font-size: 14px;
         }
 
@@ -571,7 +595,7 @@
             gap: 16px;
             margin-top: 10px;
             font-size: 13px;
-            color: #6a7f94;
+            color: #5a6f88;
         }
 
         /* ===== ЛОГОТИПЫ ПРОВАЙДЕРОВ ===== */
@@ -582,17 +606,18 @@
         }
 
         .logo-grid a {
-            background: #0b0e14;
-            border: 1px solid #1f2a36;
+            background: #ffffff;
+            border: 1px solid #d0d9e6;
             border-radius: 12px;
             padding: 16px 12px;
             text-align: center;
             transition: 0.3s;
             text-decoration: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
 
         .logo-grid a:hover {
-            border-color: #f5c842;
+            border-color: #2a7de1;
             transform: scale(1.04);
         }
 
@@ -606,7 +631,7 @@
 
         .logo-grid strong {
             font-size: 13px;
-            color: #b0c4de;
+            color: #1a2332;
             display: block;
         }
 
@@ -620,7 +645,7 @@
 
         .split h2 {
             font-size: 36px;
-            color: #f5c842;
+            color: #2a7de1;
         }
 
         .review-preview {
@@ -630,26 +655,27 @@
         }
 
         .review-preview article {
-            background: #0b0e14;
-            border: 1px solid #1f2a36;
+            background: #ffffff;
+            border: 1px solid #d0d9e6;
             border-radius: 12px;
             padding: 18px 22px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
 
         .review-preview article strong {
-            color: #f5c842;
+            color: #2a7de1;
         }
 
         .review-preview article p {
-            color: #d0dcec;
+            color: #1a2332;
             margin-top: 6px;
         }
 
         /* ===== КНОПКА ПРИЗЫВА ===== */
         .footer-cta {
-            background: linear-gradient(145deg, #0b0e14, #141a24);
-            border-top: 1px solid #1f2a36;
-            border-bottom: 1px solid #1f2a36;
+            background: linear-gradient(145deg, #eef2f7, #dce4ee);
+            border-top: 1px solid #d0d9e6;
+            border-bottom: 1px solid #d0d9e6;
             padding: 50px 0;
         }
 
@@ -662,19 +688,20 @@
         }
 
         .footer-cta h2 {
-            color: #fff;
+            color: #1a2332;
             font-size: 28px;
         }
 
         .footer-cta p {
-            color: #8aa0b8;
+            color: #2c3e5a;
             max-width: 500px;
         }
 
         /* ===== ФУТЕР ===== */
         .site-footer {
-            background: #070611;
+            background: #ffffff;
             padding: 40px 0 20px;
+            border-top: 1px solid #d0d9e6;
         }
 
         .footer-grid {
@@ -684,7 +711,7 @@
         }
 
         .footer-brand p {
-            color: #8aa0b8;
+            color: #2c3e5a;
             font-size: 14px;
             margin: 12px 0;
         }
@@ -695,40 +722,40 @@
         }
 
         .footer-trust span {
-            background: #1f2a36;
+            background: #e6edf5;
             padding: 2px 12px;
             border-radius: 20px;
             font-size: 12px;
-            color: #8aa0b8;
+            color: #2c3e5a;
         }
 
         .footer-grid strong {
-            color: #f5c842;
+            color: #1a2332;
             display: block;
             margin-bottom: 10px;
         }
 
         .footer-grid a {
             display: block;
-            color: #8aa0b8;
+            color: #2c3e5a;
             font-size: 14px;
             padding: 3px 0;
             transition: 0.3s;
         }
 
         .footer-grid a:hover {
-            color: #f5c842;
+            color: #2a7de1;
         }
 
         .footer-bottom {
-            border-top: 1px solid #1f2a36;
+            border-top: 1px solid #d0d9e6;
             padding-top: 20px;
             margin-top: 30px;
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
             font-size: 14px;
-            color: #6a7f94;
+            color: #5a6f88;
         }
 
         /* ===== МОБИЛЬНАЯ ПАНЕЛЬ ===== */
@@ -738,8 +765,8 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: #0b0e14;
-            border-top: 1px solid #1f2a36;
+            background: #ffffff;
+            border-top: 1px solid #d0d9e6;
             padding: 10px;
             gap: 10px;
             z-index: 200;
@@ -755,13 +782,49 @@
 
         .mobile-bar a:first-child {
             background: transparent;
-            border: 1px solid #2a3a4a;
-            color: #b0c4de;
+            border: 1px solid #c0cbd8;
+            color: #1a2332;
         }
 
         .mobile-bar a:last-child {
-            background: #f5c842;
-            color: #0b0e14;
+            background: #2a7de1;
+            color: #ffffff;
+        }
+
+        /* ===== ТОК-КАРТА (сайдбар) ===== */
+        .toc-card {
+            background: #ffffff;
+            border: 1px solid #d0d9e6;
+            border-radius: 16px;
+            padding: 24px;
+            position: sticky;
+            top: 90px;
+            align-self: start;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .toc-card strong {
+            display: block;
+            color: #1a2332;
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .toc-card a {
+            display: block;
+            color: #2c3e5a;
+            padding: 6px 0;
+            font-size: 14px;
+            border-bottom: 1px solid #e6edf5;
+        }
+
+        .toc-card a:hover {
+            color: #2a7de1;
+        }
+
+        .toc-card .btn {
+            margin-top: 16px;
+            width: 100%;
         }
 
         /* ===== AGE GATE ===== */
@@ -771,7 +834,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(7, 6, 17, 0.95);
+            background: rgba(238, 242, 247, 0.97);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -784,32 +847,33 @@
         }
 
         .age-gate-card {
-            background: #0b0e14;
-            border: 1px solid #1f2a36;
+            background: #ffffff;
+            border: 1px solid #d0d9e6;
             border-radius: 24px;
             padding: 40px;
             max-width: 480px;
             text-align: center;
+            box-shadow: 0 12px 48px rgba(0,0,0,0.08);
         }
 
         .age-gate-mark {
             display: inline-block;
-            background: #1f2a36;
+            background: #e6edf5;
             padding: 8px 24px;
             border-radius: 40px;
             font-size: 24px;
             font-weight: 800;
-            color: #f5c842;
+            color: #2a7de1;
         }
 
         .age-gate-card h2 {
-            color: #fff;
+            color: #1a2332;
             font-size: 26px;
             margin: 16px 0 8px;
         }
 
         .age-gate-card p {
-            color: #8aa0b8;
+            color: #2c3e5a;
             margin-bottom: 24px;
         }
 
@@ -823,7 +887,7 @@
         .age-gate-card a {
             display: block;
             margin-top: 16px;
-            color: #6a7f94;
+            color: #5a6f88;
             font-size: 14px;
         }
 
@@ -872,7 +936,7 @@
                 width: 100%;
                 justify-content: center;
                 padding-top: 12px;
-                border-top: 1px solid #1f2a36;
+                border-top: 1px solid #d0d9e6;
             }
 
             .page-hero h1 {
@@ -956,7 +1020,9 @@
     <header class="site-header">
         <div class="container header-row">
             <a class="brand" href="/">
-                <span>MELLSTROY <span>КАЗИНО</span></span>
+                <!-- ВАШ ЛОГОТИП (файл logo.png лежит в той же папке) -->
+                <img src="logo.png" alt="MELLSTROY КАЗИНО" loading="lazy">
+                <span>MELLSTROY КАЗИНО</span>
             </a>
             <button class="menu-button" type="button" data-menu aria-label="Открыть меню">
                 <i class="fas fa-bars"></i> Меню
@@ -974,7 +1040,6 @@
             <div class="header-actions">
                 <span class="age-badge" aria-label="Только для совершеннолетних">18+</span>
                 <a class="btn ghost" href="#login">Войти</a>
-                <!-- ВАША РЕФЕРАЛЬНАЯ ССЫЛКА -->
                 <a class="btn primary" href="https://mell636.com/?p=hkmq" rel="nofollow sponsored">Регистрация</a>
             </div>
         </div>
@@ -991,7 +1056,6 @@
                     <h1><span class="gradient-text">MELLSTROY КАЗИНО</span> — лучший выбор для СНГ</h1>
                     <p>Обзор официального проекта MELLSTROY КАЗИНО на русском языке: вход и регистрация, игры, бонусы, мультивалютные платежи, мобильный доступ, отзывы и правила безопасности.</p>
                     <div class="hero-buttons">
-                        <!-- ВАША РЕФЕРАЛЬНАЯ ССЫЛКА -->
                         <a class="btn primary large" href="https://mell636.com/?p=hkmq" rel="nofollow sponsored">Начать игру</a>
                         <a class="btn ghost large" href="#rules">Изучить правила</a>
                     </div>
@@ -1251,7 +1315,6 @@
                     <a href="#payments">Платежи</a>
                     <a href="#comparison">Сравнение</a>
                     <a href="#home-faq">FAQ</a>
-                    <!-- ВАША РЕФЕРАЛЬНАЯ ССЫЛКА -->
                     <a class="btn primary" href="https://mell636.com/?p=hkmq" rel="nofollow sponsored">Регистрация</a>
                 </aside>
             </div>
@@ -1271,7 +1334,7 @@
                     <article class="content-card content-card-slots">
                         <a href="#game1">
                             <figure class="card-media">
-                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%23141a24'/%3E%3Ctext x='600' y='315' font-family='sans-serif' font-size='32' fill='%23f5c842' text-anchor='middle' dominant-baseline='middle'%3EGates of Olympus%3C/text%3E%3C/svg%3E" alt="Gates of Olympus" width="1200" height="630" loading="lazy">
+                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%23e6edf5'/%3E%3Ctext x='600' y='315' font-family='sans-serif' font-size='32' fill='%232a7de1' text-anchor='middle' dominant-baseline='middle'%3EGates of Olympus%3C/text%3E%3C/svg%3E" alt="Gates of Olympus" width="1200" height="630" loading="lazy">
                             </figure>
                             <div class="card-copy">
                                 <span>Pragmatic Play</span>
@@ -1283,7 +1346,7 @@
                     <article class="content-card content-card-slots">
                         <a href="#game2">
                             <figure class="card-media">
-                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%23141a24'/%3E%3Ctext x='600' y='315' font-family='sans-serif' font-size='32' fill='%23f5c842' text-anchor='middle' dominant-baseline='middle'%3ESweet Bonanza%3C/text%3E%3C/svg%3E" alt="Sweet Bonanza" width="1200" height="630" loading="lazy">
+                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%23e6edf5'/%3E%3Ctext x='600' y='315' font-family='sans-serif' font-size='32' fill='%232a7de1' text-anchor='middle' dominant-baseline='middle'%3ESweet Bonanza%3C/text%3E%3C/svg%3E" alt="Sweet Bonanza" width="1200" height="630" loading="lazy">
                             </figure>
                             <div class="card-copy">
                                 <span>Pragmatic Play</span>
@@ -1295,7 +1358,7 @@
                     <article class="content-card content-card-slots">
                         <a href="#game3">
                             <figure class="card-media">
-                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%23141a24'/%3E%3Ctext x='600' y='315' font-family='sans-serif' font-size='32' fill='%23f5c842' text-anchor='middle' dominant-baseline='middle'%3EBook of Dead%3C/text%3E%3C/svg%3E" alt="Book of Dead" width="1200" height="630" loading="lazy">
+                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%23e6edf5'/%3E%3Ctext x='600' y='315' font-family='sans-serif' font-size='32' fill='%232a7de1' text-anchor='middle' dominant-baseline='middle'%3EBook of Dead%3C/text%3E%3C/svg%3E" alt="Book of Dead" width="1200" height="630" loading="lazy">
                             </figure>
                             <div class="card-copy">
                                 <span>Play'n GO</span>
@@ -1307,7 +1370,7 @@
                     <article class="content-card content-card-slots">
                         <a href="#game4">
                             <figure class="card-media">
-                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%23141a24'/%3E%3Ctext x='600' y='315' font-family='sans-serif' font-size='32' fill='%23f5c842' text-anchor='middle' dominant-baseline='middle'%3EBig Bass Bonanza%3C/text%3E%3C/svg%3E" alt="Big Bass Bonanza" width="1200" height="630" loading="lazy">
+                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%23e6edf5'/%3E%3Ctext x='600' y='315' font-family='sans-serif' font-size='32' fill='%232a7de1' text-anchor='middle' dominant-baseline='middle'%3EBig Bass Bonanza%3C/text%3E%3C/svg%3E" alt="Big Bass Bonanza" width="1200" height="630" loading="lazy">
                             </figure>
                             <div class="card-copy">
                                 <span>Pragmatic Play</span>
@@ -1330,17 +1393,17 @@
                     </div>
                     <a href="#comparison">Открыть отдельную страницу →</a>
                 </div>
-                <p class="section-intro" style="color:#8aa0b8; margin-bottom:20px;">Выберите две игры и сопоставьте провайдера, формат, волатильность и основную механику без перехода между карточками.</p>
-                <div class="slot-comparison" style="background:#0b0e14; border:1px solid #1f2a36; border-radius:16px; padding:24px;">
+                <p class="section-intro" style="color:#2c3e5a; margin-bottom:20px;">Выберите две игры и сопоставьте провайдера, формат, волатильность и основную механику без перехода между карточками.</p>
+                <div class="slot-comparison" style="background:#ffffff; border:1px solid #d0d9e6; border-radius:16px; padding:24px; box-shadow:0 2px 8px rgba(0,0,0,0.04);">
                     <div style="display:flex; gap:16px; flex-wrap:wrap; justify-content:center; margin-bottom:20px;">
-                        <select style="background:#141a24; color:#e0e0e0; border:1px solid #2a3a4a; padding:10px 16px; border-radius:8px; font-size:15px; min-width:180px;">
+                        <select style="background:#f5f8fc; color:#1a2332; border:1px solid #c0cbd8; padding:10px 16px; border-radius:8px; font-size:15px; min-width:180px;">
                             <option>Gates of Olympus</option>
                             <option>Sweet Bonanza</option>
                             <option>Book of Dead</option>
                             <option>Big Bass Bonanza</option>
                         </select>
-                        <button style="background:#1f2a36; color:#f5c842; border:none; padding:10px 20px; border-radius:8px; font-size:20px;">⇄</button>
-                        <select style="background:#141a24; color:#e0e0e0; border:1px solid #2a3a4a; padding:10px 16px; border-radius:8px; font-size:15px; min-width:180px;">
+                        <button style="background:#e6edf5; color:#2a7de1; border:none; padding:10px 20px; border-radius:8px; font-size:20px; cursor:pointer;">⇄</button>
+                        <select style="background:#f5f8fc; color:#1a2332; border:1px solid #c0cbd8; padding:10px 16px; border-radius:8px; font-size:15px; min-width:180px;">
                             <option>Sweet Bonanza</option>
                             <option>Gates of Olympus</option>
                             <option>Book of Dead</option>
@@ -1348,16 +1411,16 @@
                         </select>
                     </div>
                     <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
-                        <div style="background:#141a24; border-radius:12px; padding:20px; text-align:center;">
-                            <strong style="color:#fff;">Gates of Olympus</strong>
-                            <p style="color:#8aa0b8; font-size:14px;">Pragmatic Play · 6×5 · Высокая</p>
+                        <div style="background:#f5f8fc; border-radius:12px; padding:20px; text-align:center; border:1px solid #d0d9e6;">
+                            <strong style="color:#1a2332;">Gates of Olympus</strong>
+                            <p style="color:#2c3e5a; font-size:14px;">Pragmatic Play · 6×5 · Высокая</p>
                         </div>
-                        <div style="background:#141a24; border-radius:12px; padding:20px; text-align:center;">
-                            <strong style="color:#fff;">Sweet Bonanza</strong>
-                            <p style="color:#8aa0b8; font-size:14px;">Pragmatic Play · 6×5 · Высокая</p>
+                        <div style="background:#f5f8fc; border-radius:12px; padding:20px; text-align:center; border:1px solid #d0d9e6;">
+                            <strong style="color:#1a2332;">Sweet Bonanza</strong>
+                            <p style="color:#2c3e5a; font-size:14px;">Pragmatic Play · 6×5 · Высокая</p>
                         </div>
                     </div>
-                    <p style="text-align:center; color:#6a7f94; font-size:14px; margin-top:16px;">Инструмент сопоставляет данные карточек и не прогнозирует результат игры.</p>
+                    <p style="text-align:center; color:#5a6f88; font-size:14px; margin-top:16px;">Инструмент сопоставляет данные карточек и не прогнозирует результат игры.</p>
                 </div>
             </div>
         </section>
@@ -1401,7 +1464,7 @@
                     <article class="content-card">
                         <a href="#article1">
                             <figure class="card-media">
-                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%23141a24'/%3E%3Ctext x='600' y='315' font-family='sans-serif' font-size='32' fill='%23f5c842' text-anchor='middle' dominant-baseline='middle'%3EWild и Scatter%3C/text%3E%3C/svg%3E" alt="Wild и Scatter" width="1200" height="630" loading="lazy">
+                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%23e6edf5'/%3E%3Ctext x='600' y='315' font-family='sans-serif' font-size='32' fill='%232a7de1' text-anchor='middle' dominant-baseline='middle'%3EWild и Scatter%3C/text%3E%3C/svg%3E" alt="Wild и Scatter" width="1200" height="630" loading="lazy">
                             </figure>
                             <div class="card-copy">
                                 <span>Механики</span>
@@ -1414,7 +1477,7 @@
                     <article class="content-card">
                         <a href="#article2">
                             <figure class="card-media">
-                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%23141a24'/%3E%3Ctext x='600' y='315' font-family='sans-serif' font-size='32' fill='%23f5c842' text-anchor='middle' dominant-baseline='middle'%3EПлатежные лимиты%3C/text%3E%3C/svg%3E" alt="Платежные лимиты" width="1200" height="630" loading="lazy">
+                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%23e6edf5'/%3E%3Ctext x='600' y='315' font-family='sans-serif' font-size='32' fill='%232a7de1' text-anchor='middle' dominant-baseline='middle'%3EПлатежные лимиты%3C/text%3E%3C/svg%3E" alt="Платежные лимиты" width="1200" height="630" loading="lazy">
                             </figure>
                             <div class="card-copy">
                                 <span>Платежи</span>
@@ -1427,7 +1490,7 @@
                     <article class="content-card">
                         <a href="#article3">
                             <figure class="card-media">
-                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%23141a24'/%3E%3Ctext x='600' y='315' font-family='sans-serif' font-size='32' fill='%23f5c842' text-anchor='middle' dominant-baseline='middle'%EБраузер vs Приложение%3C/text%3E%3C/svg%3E" alt="Браузер или приложение" width="1200" height="630" loading="lazy">
+                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%23e6edf5'/%3E%3Ctext x='600' y='315' font-family='sans-serif' font-size='32' fill='%232a7de1' text-anchor='middle' dominant-baseline='middle'%EБраузер vs Приложение%3C/text%3E%3C/svg%3E" alt="Браузер или приложение" width="1200" height="630" loading="lazy">
                             </figure>
                             <div class="card-copy">
                                 <span>Приложение</span>
@@ -1441,7 +1504,7 @@
             </div>
         </section>
 
-        <!-- ===== ОТЗЫВЫ (подредактированы) ===== -->
+        <!-- ===== ОТЗЫВЫ ===== -->
         <section class="section" id="reviews">
             <div class="container split">
                 <div>
@@ -1477,7 +1540,6 @@
                 <h2>MELLSTROY КАЗИНО для совершеннолетних пользователей</h2>
                 <p>Перед регистрацией проверьте правила, валюту аккаунта, бонусные ограничения и доступные способы оплаты.</p>
             </div>
-            <!-- ВАША РЕФЕРАЛЬНАЯ ССЫЛКА -->
             <a class="btn primary large" href="https://mell636.com/?p=hkmq" rel="nofollow sponsored">Играть в MELLSTROY КАЗИНО</a>
         </div>
     </section>
@@ -1486,7 +1548,10 @@
     <footer class="site-footer">
         <div class="container footer-grid">
             <div class="footer-brand">
-                <span style="font-size:24px; font-weight:800; color:#f5c842;">MELLSTROY <span style="color:#fff;">КАЗИНО</span></span>
+                <div style="display:flex; align-items:center; gap:12px;">
+                    <img src="logo.png" alt="MELLSTROY КАЗИНО" style="height:40px; width:auto;">
+                    <span style="font-size:20px; font-weight:800; color:#1a2332;">MELLSTROY КАЗИНО</span>
+                </div>
                 <p>Русскоязычный сайт MELLSTROY КАЗИНО для совершеннолетних пользователей стран СНГ. Азартная игра не является способом заработка.</p>
                 <div class="footer-trust"><span>HTTPS</span><span>18+</span><span>Проверка источников</span></div>
             </div>
@@ -1505,7 +1570,6 @@
     <!-- ===== МОБИЛЬНАЯ ПАНЕЛЬ ===== -->
     <div class="mobile-bar">
         <a href="#login">Войти</a>
-        <!-- ВАША РЕФЕРАЛЬНАЯ ССЫЛКА -->
         <a href="https://mell636.com/?p=hkmq" rel="nofollow sponsored">Играть</a>
     </div>
 
