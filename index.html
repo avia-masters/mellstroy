@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
     <title>MELLSTROY КАЗИНО — официальный сайт для СНГ</title>
     <meta name="description" content="Официальный сайт MELLSTROY КАЗИНО для СНГ: вход, регистрация, бонусы, слоты, провайдеры, приложение, платежи, отзывы и правила.">
-    <meta name="theme-color" content="#eef2f7">
+    <meta name="theme-color" content="#080c18">
     <link rel="canonical" href="https://ваш-сайт.com/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="MELLSTROY КАЗИНО — официальный сайт для СНГ">
@@ -14,11 +14,10 @@
     <meta property="og:image" content="https://ваш-сайт.com/assets/img/og-cover.webp">
     <meta name="twitter:card" content="summary_large_image">
 
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
-        /* ===== ОБНУЛЕНИЕ И БАЗА (светлая тема) ===== */
+        /* ===== БАЗА ===== */
         * {
             margin: 0;
             padding: 0;
@@ -27,8 +26,8 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #eef2f7;
-            color: #1a2332;
+            background: #080c18;
+            color: #c0d0e8;
             line-height: 1.6;
         }
 
@@ -39,12 +38,14 @@
         }
 
         a {
-            color: #2a7de1;
+            color: #4af0ff;
             text-decoration: none;
+            transition: 0.3s;
         }
 
         a:hover {
-            color: #1a5fb4;
+            color: #8af5ff;
+            text-shadow: 0 0 20px rgba(74, 240, 255, 0.3);
         }
 
         /* ===== СКИП-ССЫЛКА ===== */
@@ -52,27 +53,25 @@
             position: absolute;
             top: -100px;
             left: 10px;
-            background: #2a7de1;
-            color: #fff;
+            background: #4af0ff;
+            color: #080c18;
             padding: 10px 20px;
             border-radius: 0 0 8px 8px;
             z-index: 1000;
             font-weight: 700;
         }
-
-        .skip:focus {
-            top: 0;
-        }
+        .skip:focus { top: 0; }
 
         /* ===== ШАПКА ===== */
         .site-header {
-            background: #ffffff;
+            background: #0a1025;
             padding: 12px 0;
-            border-bottom: 2px solid #d0d9e6;
+            border-bottom: 1px solid #1a2a4a;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            box-shadow: 0 4px 40px rgba(0, 20, 80, 0.4);
+            backdrop-filter: blur(10px);
         }
 
         .header-row {
@@ -89,20 +88,15 @@
             gap: 12px;
             font-size: 22px;
             font-weight: 800;
-            color: #1a2332;
+            color: #ffffff;
         }
-
-        .brand img {
-            height: 44px;
-            width: auto;
-            display: block;
-        }
+        .brand img { height: 44px; width: auto; display: block; }
 
         .menu-button {
             display: none;
             background: none;
-            border: 1px solid #c0cbd8;
-            color: #1a2332;
+            border: 1px solid #1a2a4a;
+            color: #c0d0e8;
             padding: 8px 16px;
             border-radius: 8px;
             cursor: pointer;
@@ -115,16 +109,15 @@
             gap: 10px 20px;
             flex-wrap: wrap;
         }
-
         .main-nav a {
-            color: #2c3e5a;
+            color: #8aa0c0;
             font-weight: 500;
             font-size: 15px;
             transition: 0.3s;
         }
-
         .main-nav a:hover {
-            color: #2a7de1;
+            color: #4af0ff;
+            text-shadow: 0 0 20px rgba(74, 240, 255, 0.2);
         }
 
         .header-actions {
@@ -134,11 +127,11 @@
         }
 
         .age-badge {
-            background: #d0d9e6;
+            background: #1a2a4a;
             padding: 4px 12px;
             border-radius: 20px;
             font-weight: 700;
-            color: #1a2332;
+            color: #4af0ff;
             font-size: 13px;
         }
 
@@ -155,25 +148,24 @@
         }
 
         .btn.primary {
-            background: #2a7de1;
-            color: #ffffff;
+            background: linear-gradient(135deg, #2a7de1, #4af0ff);
+            color: #080c18;
+            box-shadow: 0 0 30px rgba(74, 240, 255, 0.15);
         }
-
         .btn.primary:hover {
-            background: #1a5fb4;
             transform: scale(1.04);
-            box-shadow: 0 4px 16px rgba(42, 125, 225, 0.3);
+            box-shadow: 0 0 50px rgba(74, 240, 255, 0.3);
         }
 
         .btn.ghost {
             background: transparent;
-            color: #2c3e5a;
-            border: 1px solid #c0cbd8;
+            color: #8aa0c0;
+            border: 1px solid #1a2a4a;
         }
-
         .btn.ghost:hover {
-            border-color: #2a7de1;
-            color: #2a7de1;
+            border-color: #4af0ff;
+            color: #4af0ff;
+            box-shadow: 0 0 30px rgba(74, 240, 255, 0.1);
         }
 
         .btn.large {
@@ -184,8 +176,30 @@
         /* ===== ГЕРОЙ ===== */
         .page-hero {
             padding: 50px 0 60px;
-            background: linear-gradient(145deg, #eef2f7 0%, #dce4ee 100%);
+            background: linear-gradient(145deg, #080c18 0%, #0d1830 50%, #0a1025 100%);
             border-radius: 0 0 40px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(42, 125, 225, 0.08), transparent 70%);
+            pointer-events: none;
+        }
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(74, 240, 255, 0.05), transparent 70%);
+            pointer-events: none;
         }
 
         .hero-grid {
@@ -193,22 +207,24 @@
             grid-template-columns: 2fr 1fr;
             gap: 40px;
             align-items: center;
+            position: relative;
+            z-index: 1;
         }
 
         .eyebrow {
             display: inline-block;
-            background: #d0d9e6;
+            background: #1a2a4a;
             padding: 4px 16px;
             border-radius: 20px;
             font-size: 13px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: #2c3e5a;
+            color: #4af0ff;
             margin-bottom: 12px;
         }
 
         .gradient-text {
-            background: linear-gradient(135deg, #2a7de1, #5ba0f0);
+            background: linear-gradient(135deg, #2a7de1, #4af0ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -217,12 +233,12 @@
             font-size: 44px;
             font-weight: 800;
             margin-bottom: 16px;
-            color: #1a2332;
+            color: #ffffff;
         }
 
         .page-hero p {
             font-size: 18px;
-            color: #2c3e5a;
+            color: #8aa0c0;
             max-width: 600px;
             margin-bottom: 24px;
         }
@@ -237,36 +253,31 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
-            background: #ffffff;
-            border: 1px solid #d0d9e6;
+            background: rgba(10, 16, 37, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid #1a2a4a;
             border-radius: 20px;
             padding: 30px 24px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            box-shadow: 0 4px 40px rgba(0, 0, 0, 0.3);
         }
-
         .stats-card div {
             text-align: center;
         }
-
         .stats-card strong {
             display: block;
             font-size: 32px;
-            color: #2a7de1;
+            background: linear-gradient(135deg, #2a7de1, #4af0ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-
         .stats-card span {
-            color: #2c3e5a;
+            color: #8aa0c0;
             font-size: 14px;
         }
 
         /* ===== БЛОК ДОВЕРИЯ ===== */
-        .section {
-            padding: 50px 0;
-        }
-
-        .section.soft {
-            background: #f5f8fc;
-        }
+        .section { padding: 50px 0; }
+        .section.soft { background: #0a1025; }
 
         .trust-grid {
             display: grid;
@@ -276,88 +287,81 @@
         }
 
         .trust-card {
-            background: #ffffff;
-            border: 1px solid #d0d9e6;
+            background: #0d1428;
+            border: 1px solid #1a2a4a;
             border-radius: 16px;
             padding: 24px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            transition: 0.3s;
         }
-
+        .trust-card:hover {
+            border-color: #4af0ff;
+            box-shadow: 0 0 40px rgba(74, 240, 255, 0.05);
+        }
         .trust-card .trust-icon {
             display: inline-block;
-            background: #e6edf5;
+            background: #1a2a4a;
             padding: 6px 14px;
             border-radius: 30px;
             font-size: 13px;
             font-weight: 700;
-            color: #2a7de1;
+            color: #4af0ff;
             margin-bottom: 10px;
         }
-
         .trust-card strong {
             display: block;
             font-size: 18px;
-            color: #1a2332;
+            color: #ffffff;
             margin-bottom: 6px;
         }
-
         .trust-card span {
-            color: #2c3e5a;
+            color: #8aa0c0;
             font-size: 14px;
         }
 
         .security-status {
             font-size: 14px;
-            color: #5a6f88;
+            color: #5a7a9a;
             padding: 16px 0;
-            border-top: 1px solid #d0d9e6;
-            border-bottom: 1px solid #d0d9e6;
+            border-top: 1px solid #1a2a4a;
+            border-bottom: 1px solid #1a2a4a;
             margin-bottom: 30px;
         }
+        .security-status a { color: #8aa0c0; }
+        .security-status a:hover { color: #4af0ff; }
 
-        .security-status a {
-            color: #2a7de1;
-        }
-
-        /* ===== НАВИГАЦИЯ ПО ОБЗОРУ ===== */
         .overview-nav {
-            background: #ffffff;
-            border: 1px solid #d0d9e6;
+            background: #0d1428;
+            border: 1px solid #1a2a4a;
             border-radius: 16px;
             padding: 30px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
-
         .overview-nav h2 {
-            color: #1a2332;
+            color: #ffffff;
             font-size: 22px;
             margin-bottom: 8px;
         }
-
         .overview-nav p {
-            color: #2c3e5a;
+            color: #8aa0c0;
             margin-bottom: 16px;
         }
-
         .overview-links {
             display: flex;
             flex-wrap: wrap;
             gap: 8px 16px;
         }
-
         .overview-links a {
             font-size: 14px;
-            color: #2c3e5a;
-            background: #f5f8fc;
+            color: #8aa0c0;
+            background: #0a1025;
             padding: 4px 14px;
             border-radius: 20px;
-            border: 1px solid #d0d9e6;
+            border: 1px solid #1a2a4a;
             transition: 0.3s;
         }
-
         .overview-links a:hover {
-            border-color: #2a7de1;
-            color: #2a7de1;
+            border-color: #4af0ff;
+            color: #4af0ff;
+            box-shadow: 0 0 30px rgba(74, 240, 255, 0.05);
         }
 
         /* ===== СЕКЦИЯ ДЕЙСТВИЙ ===== */
@@ -368,54 +372,39 @@
             flex-wrap: wrap;
             margin-bottom: 24px;
         }
-
-        .section-head .eyebrow {
-            margin-bottom: 4px;
-        }
-
+        .section-head .eyebrow { margin-bottom: 4px; }
         .section-head h2 {
             font-size: 30px;
-            color: #1a2332;
+            color: #ffffff;
         }
-
-        .section-head a {
-            color: #2a7de1;
-        }
-
-        .section-head a:hover {
-            color: #1a5fb4;
-        }
+        .section-head a { color: #4af0ff; }
+        .section-head a:hover { color: #8af5ff; }
 
         .feature-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 20px;
         }
-
         .feature-grid a {
-            background: #ffffff;
-            border: 1px solid #d0d9e6;
+            background: #0d1428;
+            border: 1px solid #1a2a4a;
             border-radius: 16px;
             padding: 24px;
             transition: 0.3s;
             text-decoration: none;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
-
         .feature-grid a:hover {
-            border-color: #2a7de1;
+            border-color: #4af0ff;
             transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(42, 125, 225, 0.12);
+            box-shadow: 0 8px 40px rgba(74, 240, 255, 0.05);
         }
-
         .feature-grid a strong {
             display: block;
-            color: #1a2332;
+            color: #ffffff;
             font-size: 18px;
         }
-
         .feature-grid a span {
-            color: #2c3e5a;
+            color: #8aa0c0;
             font-size: 14px;
         }
 
@@ -428,55 +417,45 @@
 
         .prose h2 {
             font-size: 26px;
-            color: #1a2332;
+            background: linear-gradient(135deg, #2a7de1, #4af0ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin: 40px 0 12px;
             padding-top: 10px;
         }
-
-        .prose h2:first-child {
-            margin-top: 0;
-        }
-
+        .prose h2:first-child { margin-top: 0; }
         .prose p {
-            color: #1a2332;
+            color: #c0d0e8;
             margin-bottom: 16px;
         }
-
-        .prose a {
-            color: #2a7de1;
-        }
+        .prose a { color: #4af0ff; }
+        .prose a:hover { color: #8af5ff; }
 
         .table-wrap {
             overflow-x: auto;
             margin: 16px 0 24px;
         }
-
         .table-wrap table {
             width: 100%;
-            background: #ffffff;
+            background: #0d1428;
             border-radius: 12px;
             border-collapse: collapse;
             font-size: 15px;
-            border: 1px solid #d0d9e6;
+            border: 1px solid #1a2a4a;
         }
-
         .table-wrap th {
-            background: #e6edf5;
-            color: #1a2332;
+            background: #1a2a4a;
+            color: #4af0ff;
             padding: 14px 18px;
             text-align: left;
             font-weight: 600;
         }
-
         .table-wrap td {
             padding: 12px 18px;
-            border-bottom: 1px solid #d0d9e6;
-            color: #1a2332;
+            border-bottom: 1px solid #1a2a4a;
+            color: #c0d0e8;
         }
-
-        .table-wrap tr:last-child td {
-            border-bottom: none;
-        }
+        .table-wrap tr:last-child td { border-bottom: none; }
 
         .fact-list {
             display: grid;
@@ -484,47 +463,40 @@
             gap: 16px;
             margin: 16px 0 24px;
         }
-
         .fact-list div {
-            background: #ffffff;
-            border: 1px solid #d0d9e6;
+            background: #0d1428;
+            border: 1px solid #1a2a4a;
             border-radius: 12px;
             padding: 16px 20px;
         }
-
         .fact-list div strong {
             display: block;
-            color: #2a7de1;
+            color: #4af0ff;
             font-size: 15px;
         }
-
         .fact-list div span {
-            color: #2c3e5a;
+            color: #8aa0c0;
             font-size: 14px;
         }
 
-        /* ===== FAQ ===== */
         .faq details {
-            background: #ffffff;
-            border: 1px solid #d0d9e6;
+            background: #0d1428;
+            border: 1px solid #1a2a4a;
             border-radius: 12px;
             padding: 16px 20px;
             margin-bottom: 10px;
+            transition: 0.3s;
         }
-
+        .faq details:hover { border-color: #4af0ff; }
         .faq summary {
             font-weight: 600;
-            color: #1a2332;
+            color: #ffffff;
             cursor: pointer;
             font-size: 17px;
         }
-
-        .faq summary:hover {
-            color: #2a7de1;
-        }
-
+        .faq summary:hover { color: #4af0ff; }
         .faq details p {
-            color: #2c3e5a;
+            color: #c0d0e8;
             padding-top: 12px;
             margin: 0;
         }
@@ -534,68 +506,52 @@
             display: grid;
             gap: 24px;
         }
-
         .card-grid-slots {
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
         }
 
         .content-card {
-            background: #ffffff;
-            border: 1px solid #d0d9e6;
+            background: #0d1428;
+            border: 1px solid #1a2a4a;
             border-radius: 16px;
             overflow: hidden;
             transition: 0.3s;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
-
         .content-card:hover {
-            border-color: #2a7de1;
+            border-color: #4af0ff;
             transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(42, 125, 225, 0.12);
+            box-shadow: 0 8px 40px rgba(74, 240, 255, 0.05);
         }
-
-        .content-card a {
-            display: block;
-            text-decoration: none;
-            color: inherit;
-        }
-
+        .content-card a { display: block; text-decoration: none; color: inherit; }
         .card-media img {
             width: 100%;
             height: 180px;
             object-fit: cover;
             display: block;
-            background: #e6edf5;
+            background: #0a1025;
         }
-
-        .card-copy {
-            padding: 16px 20px 20px;
-        }
-
+        .card-copy { padding: 16px 20px 20px; }
         .card-copy span {
             font-size: 13px;
-            color: #2c3e5a;
+            color: #8aa0c0;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-
         .card-copy h2 {
             font-size: 18px;
-            color: #1a2332;
+            color: #ffffff;
             margin: 4px 0 8px;
         }
-
         .card-copy p {
-            color: #2c3e5a;
+            color: #c0d0e8;
             font-size: 14px;
         }
-
         .card-meta {
             display: flex;
             gap: 16px;
             margin-top: 10px;
             font-size: 13px;
-            color: #5a6f88;
+            color: #5a7a9a;
         }
 
         /* ===== ЛОГОТИПЫ ПРОВАЙДЕРОВ ===== */
@@ -604,34 +560,23 @@
             grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
             gap: 16px;
         }
-
         .logo-grid a {
-            background: #ffffff;
-            border: 1px solid #d0d9e6;
+            background: #0d1428;
+            border: 1px solid #1a2a4a;
             border-radius: 12px;
             padding: 16px 12px;
             text-align: center;
             transition: 0.3s;
             text-decoration: none;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
-
         .logo-grid a:hover {
-            border-color: #2a7de1;
+            border-color: #4af0ff;
             transform: scale(1.04);
+            box-shadow: 0 0 40px rgba(74, 240, 255, 0.05);
         }
-
-        .logo-grid img {
-            max-width: 80px;
-            height: 40px;
-            object-fit: contain;
-            display: block;
-            margin: 0 auto 8px;
-        }
-
         .logo-grid strong {
             font-size: 13px;
-            color: #1a2332;
+            color: #8aa0c0;
             display: block;
         }
 
@@ -642,10 +587,11 @@
             gap: 40px;
             align-items: start;
         }
-
         .split h2 {
             font-size: 36px;
-            color: #2a7de1;
+            background: linear-gradient(135deg, #2a7de1, #4af0ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .review-preview {
@@ -653,32 +599,27 @@
             flex-direction: column;
             gap: 16px;
         }
-
         .review-preview article {
-            background: #ffffff;
-            border: 1px solid #d0d9e6;
+            background: #0d1428;
+            border: 1px solid #1a2a4a;
             border-radius: 12px;
             padding: 18px 22px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            transition: 0.3s;
         }
-
-        .review-preview article strong {
-            color: #2a7de1;
-        }
-
+        .review-preview article:hover { border-color: #4af0ff; }
+        .review-preview article strong { color: #4af0ff; }
         .review-preview article p {
-            color: #1a2332;
+            color: #c0d0e8;
             margin-top: 6px;
         }
 
-        /* ===== КНОПКА ПРИЗЫВА ===== */
+        /* ===== ПРИЗЫВ ===== */
         .footer-cta {
-            background: linear-gradient(145deg, #eef2f7, #dce4ee);
-            border-top: 1px solid #d0d9e6;
-            border-bottom: 1px solid #d0d9e6;
+            background: linear-gradient(145deg, #080c18, #0d1830);
+            border-top: 1px solid #1a2a4a;
+            border-bottom: 1px solid #1a2a4a;
             padding: 50px 0;
         }
-
         .footer-cta .container {
             display: flex;
             justify-content: space-between;
@@ -686,76 +627,65 @@
             flex-wrap: wrap;
             gap: 30px;
         }
-
         .footer-cta h2 {
-            color: #1a2332;
+            color: #ffffff;
             font-size: 28px;
         }
-
         .footer-cta p {
-            color: #2c3e5a;
+            color: #8aa0c0;
             max-width: 500px;
         }
 
         /* ===== ФУТЕР ===== */
         .site-footer {
-            background: #ffffff;
+            background: #080c18;
             padding: 40px 0 20px;
-            border-top: 1px solid #d0d9e6;
+            border-top: 1px solid #1a2a4a;
         }
-
         .footer-grid {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
             gap: 30px;
         }
-
         .footer-brand p {
-            color: #2c3e5a;
+            color: #8aa0c0;
             font-size: 14px;
             margin: 12px 0;
         }
-
         .footer-trust {
             display: flex;
             gap: 12px;
         }
-
         .footer-trust span {
-            background: #e6edf5;
+            background: #1a2a4a;
             padding: 2px 12px;
             border-radius: 20px;
             font-size: 12px;
-            color: #2c3e5a;
+            color: #8aa0c0;
         }
-
         .footer-grid strong {
-            color: #1a2332;
+            color: #4af0ff;
             display: block;
             margin-bottom: 10px;
         }
-
         .footer-grid a {
             display: block;
-            color: #2c3e5a;
+            color: #8aa0c0;
             font-size: 14px;
             padding: 3px 0;
             transition: 0.3s;
         }
-
-        .footer-grid a:hover {
-            color: #2a7de1;
-        }
+        .footer-grid a:hover { color: #4af0ff; }
 
         .footer-bottom {
-            border-top: 1px solid #d0d9e6;
+            border-top: 1px solid #1a2a4a;
             padding-top: 20px;
             margin-top: 30px;
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
             font-size: 14px;
-            color: #5a6f88;
+            color: #5a7a9a;
         }
 
         /* ===== МОБИЛЬНАЯ ПАНЕЛЬ ===== */
@@ -765,13 +695,12 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: #ffffff;
-            border-top: 1px solid #d0d9e6;
+            background: #0a1025;
+            border-top: 1px solid #1a2a4a;
             padding: 10px;
             gap: 10px;
             z-index: 200;
         }
-
         .mobile-bar a {
             flex: 1;
             text-align: center;
@@ -779,53 +708,42 @@
             border-radius: 30px;
             font-weight: 600;
         }
-
         .mobile-bar a:first-child {
             background: transparent;
-            border: 1px solid #c0cbd8;
-            color: #1a2332;
+            border: 1px solid #1a2a4a;
+            color: #8aa0c0;
         }
-
         .mobile-bar a:last-child {
-            background: #2a7de1;
-            color: #ffffff;
+            background: linear-gradient(135deg, #2a7de1, #4af0ff);
+            color: #080c18;
         }
 
-        /* ===== ТОК-КАРТА (сайдбар) ===== */
+        /* ===== ТОК-КАРТА ===== */
         .toc-card {
-            background: #ffffff;
-            border: 1px solid #d0d9e6;
+            background: #0d1428;
+            border: 1px solid #1a2a4a;
             border-radius: 16px;
             padding: 24px;
             position: sticky;
             top: 90px;
             align-self: start;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
-
         .toc-card strong {
             display: block;
-            color: #1a2332;
+            color: #4af0ff;
             font-size: 18px;
             margin-bottom: 12px;
         }
-
         .toc-card a {
             display: block;
-            color: #2c3e5a;
+            color: #8aa0c0;
             padding: 6px 0;
             font-size: 14px;
-            border-bottom: 1px solid #e6edf5;
+            border-bottom: 1px solid #1a2a4a;
+            transition: 0.3s;
         }
-
-        .toc-card a:hover {
-            color: #2a7de1;
-        }
-
-        .toc-card .btn {
-            margin-top: 16px;
-            width: 100%;
-        }
+        .toc-card a:hover { color: #4af0ff; }
+        .toc-card .btn { margin-top: 16px; width: 100%; }
 
         /* ===== AGE GATE ===== */
         .age-gate {
@@ -834,91 +752,66 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(238, 242, 247, 0.97);
+            background: rgba(8, 12, 24, 0.97);
             display: flex;
             align-items: center;
             justify-content: center;
             z-index: 1000;
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(10px);
         }
-
-        .age-gate[hidden] {
-            display: none;
-        }
+        .age-gate[hidden] { display: none; }
 
         .age-gate-card {
-            background: #ffffff;
-            border: 1px solid #d0d9e6;
+            background: #0d1428;
+            border: 1px solid #1a2a4a;
             border-radius: 24px;
             padding: 40px;
             max-width: 480px;
             text-align: center;
-            box-shadow: 0 12px 48px rgba(0,0,0,0.08);
+            box-shadow: 0 12px 60px rgba(0, 0, 0, 0.5);
         }
-
         .age-gate-mark {
             display: inline-block;
-            background: #e6edf5;
+            background: #1a2a4a;
             padding: 8px 24px;
             border-radius: 40px;
             font-size: 24px;
             font-weight: 800;
-            color: #2a7de1;
+            color: #4af0ff;
         }
-
         .age-gate-card h2 {
-            color: #1a2332;
+            color: #ffffff;
             font-size: 26px;
             margin: 16px 0 8px;
         }
-
         .age-gate-card p {
-            color: #2c3e5a;
+            color: #8aa0c0;
             margin-bottom: 24px;
         }
-
         .age-gate-actions {
             display: flex;
             gap: 12px;
             justify-content: center;
             flex-wrap: wrap;
         }
-
         .age-gate-card a {
             display: block;
             margin-top: 16px;
-            color: #5a6f88;
+            color: #5a7a9a;
             font-size: 14px;
         }
 
         /* ===== АДАПТИВ ===== */
         @media (max-width: 992px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .home-overview {
-                grid-template-columns: 1fr;
-            }
-
-            .toc-card {
-                position: static;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .split {
-                grid-template-columns: 1fr;
-            }
+            .hero-grid { grid-template-columns: 1fr; }
+            .home-overview { grid-template-columns: 1fr; }
+            .toc-card { position: static; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .split { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 768px) {
-            .menu-button {
-                display: block;
-            }
-
+            .menu-button { display: block; }
             .main-nav {
                 display: none;
                 width: 100%;
@@ -927,73 +820,30 @@
                 padding: 16px 0;
                 gap: 8px;
             }
-
-            .main-nav.open {
-                display: flex;
-            }
-
+            .main-nav.open { display: flex; }
             .header-actions {
                 width: 100%;
                 justify-content: center;
                 padding-top: 12px;
-                border-top: 1px solid #d0d9e6;
+                border-top: 1px solid #1a2a4a;
             }
-
-            .page-hero h1 {
-                font-size: 30px;
-            }
-
-            .stats-card {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-cta .container {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .mobile-bar {
-                display: flex;
-            }
-
-            .site-footer {
-                padding-bottom: 80px;
-            }
-
-            .overview-links a {
-                font-size: 12px;
-                padding: 3px 10px;
-            }
+            .page-hero h1 { font-size: 30px; }
+            .stats-card { grid-template-columns: 1fr 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-cta .container { flex-direction: column; text-align: center; }
+            .mobile-bar { display: flex; }
+            .site-footer { padding-bottom: 80px; }
+            .overview-links a { font-size: 12px; padding: 3px 10px; }
         }
 
         @media (max-width: 480px) {
-            .page-hero h1 {
-                font-size: 24px;
-            }
-
-            .btn.large {
-                padding: 12px 24px;
-                font-size: 16px;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-            }
-
-            .age-gate-card {
-                padding: 24px;
-                margin: 16px;
-            }
+            .page-hero h1 { font-size: 24px; }
+            .btn.large { padding: 12px 24px; font-size: 16px; }
+            .hero-buttons { flex-direction: column; }
+            .age-gate-card { padding: 24px; margin: 16px; }
         }
 
-        /* ===== СКРЫТЫЕ ЭЛЕМЕНТЫ ===== */
-        [hidden] {
-            display: none !important;
-        }
+        [hidden] { display: none !important; }
     </style>
 </head>
 <body>
@@ -1037,7 +887,7 @@
                 <a href="rules.html">Правила</a>
             </nav>
             <div class="header-actions">
-                <span class="age-badge" aria-label="Только для совершеннолетних">18+</span>
+                <span class="age-badge">18+</span>
                 <a class="btn ghost" href="login.html">Войти</a>
                 <a class="btn primary" href="https://mell636.com/?p=hkmq" rel="nofollow sponsored">Регистрация</a>
             </div>
@@ -1332,7 +1182,7 @@
                     <article class="content-card content-card-slots">
                         <a href="games.html">
                             <figure class="card-media">
-                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%23e6edf5'/%3E%3Ctext x='600' y='315' font-family='sans-serif' font-size='32' fill='%232a7de1' text-anchor='middle' dominant-baseline='middle'%3EGates of Olympus%3C/text%3E%3C/svg%3E" alt="Gates of Olympus" width="1200" height="630" loading="lazy">
+                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%230a1025'/%3E%3Ctext x='600' y='315' font-family='sans-serif' font-size='32' fill='%234af0ff' text-anchor='middle' dominant-baseline='middle'%3EGates of Olympus%3C/text%3E%3C/svg%3E" alt="Gates of Olympus" width="1200" height="630" loading="lazy">
                             </figure>
                             <div class="card-copy">
                                 <span>Pragmatic Play</span>
@@ -1344,7 +1194,7 @@
                     <article class="content-card content-card-slots">
                         <a href="games.html">
                             <figure class="card-media">
-                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%23e6edf5'/%3E%3Ctext x='600' y='315' font-family='sans-serif' font-size='32' fill='%232a7de1' text-anchor='middle' dominant-baseline='middle'%3ESweet Bonanza%3C/text%3E%3C/svg%3E" alt="Sweet Bonanza" width="1200" height="630" loading="lazy">
+                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%230a1025'/%3E%3Ctext x='600' y='315' font-family='sans-serif' font-size='32' fill='%234af0ff' text-anchor='middle' dominant-baseline='middle'%3ESweet Bonanza%3C/text%3E%3C/svg%3E" alt="Sweet Bonanza" width="1200" height="630" loading="lazy">
                             </figure>
                             <div class="card-copy">
                                 <span>Pragmatic Play</span>
@@ -1356,7 +1206,7 @@
                     <article class="content-card content-card-slots">
                         <a href="games.html">
                             <figure class="card-media">
-                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%23e6edf5'/%3E%3Ctext x='600' y='315' font-family='sans-serif' font-size='32' fill='%232a7de1' text-anchor='middle' dominant-baseline='middle'%3EBook of Dead%3C/text%3E%3C/svg%3E" alt="Book of Dead" width="1200" height="630" loading="lazy">
+                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%230a1025'/%3E%3Ctext x='600' y='315' font-family='sans-serif' font-size='32' fill='%234af0ff' text-anchor='middle' dominant-baseline='middle'%3EBook of Dead%3C/text%3E%3C/svg%3E" alt="Book of Dead" width="1200" height="630" loading="lazy">
                             </figure>
                             <div class="card-copy">
                                 <span>Play'n GO</span>
@@ -1368,7 +1218,7 @@
                     <article class="content-card content-card-slots">
                         <a href="games.html">
                             <figure class="card-media">
-                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%23e6edf5'/%3E%3Ctext x='600' y='315' font-family='sans-serif' font-size='32' fill='%232a7de1' text-anchor='middle' dominant-baseline='middle'%3EBig Bass Bonanza%3C/text%3E%3C/svg%3E" alt="Big Bass Bonanza" width="1200" height="630" loading="lazy">
+                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%230a1025'/%3E%3Ctext x='600' y='315' font-family='sans-serif' font-size='32' fill='%234af0ff' text-anchor='middle' dominant-baseline='middle'%3EBig Bass Bonanza%3C/text%3E%3C/svg%3E" alt="Big Bass Bonanza" width="1200" height="630" loading="lazy">
                             </figure>
                             <div class="card-copy">
                                 <span>Pragmatic Play</span>
@@ -1391,17 +1241,17 @@
                     </div>
                     <a href="comparison.html">Открыть отдельную страницу →</a>
                 </div>
-                <p class="section-intro" style="color:#2c3e5a; margin-bottom:20px;">Выберите две игры и сопоставьте провайдера, формат, волатильность и основную механику без перехода между карточками.</p>
-                <div class="slot-comparison" style="background:#ffffff; border:1px solid #d0d9e6; border-radius:16px; padding:24px; box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+                <p class="section-intro" style="color:#8aa0c0; margin-bottom:20px;">Выберите две игры и сопоставьте провайдера, формат, волатильность и основную механику без перехода между карточками.</p>
+                <div class="slot-comparison" style="background:#0d1428; border:1px solid #1a2a4a; border-radius:16px; padding:24px; box-shadow:0 4px 20px rgba(0,0,0,0.2);">
                     <div style="display:flex; gap:16px; flex-wrap:wrap; justify-content:center; margin-bottom:20px;">
-                        <select style="background:#f5f8fc; color:#1a2332; border:1px solid #c0cbd8; padding:10px 16px; border-radius:8px; font-size:15px; min-width:180px;">
+                        <select style="background:#0a1025; color:#c0d0e8; border:1px solid #1a2a4a; padding:10px 16px; border-radius:8px; font-size:15px; min-width:180px;">
                             <option>Gates of Olympus</option>
                             <option>Sweet Bonanza</option>
                             <option>Book of Dead</option>
                             <option>Big Bass Bonanza</option>
                         </select>
-                        <button style="background:#e6edf5; color:#2a7de1; border:none; padding:10px 20px; border-radius:8px; font-size:20px; cursor:pointer;">⇄</button>
-                        <select style="background:#f5f8fc; color:#1a2332; border:1px solid #c0cbd8; padding:10px 16px; border-radius:8px; font-size:15px; min-width:180px;">
+                        <button style="background:#1a2a4a; color:#4af0ff; border:none; padding:10px 20px; border-radius:8px; font-size:20px; cursor:pointer;">⇄</button>
+                        <select style="background:#0a1025; color:#c0d0e8; border:1px solid #1a2a4a; padding:10px 16px; border-radius:8px; font-size:15px; min-width:180px;">
                             <option>Sweet Bonanza</option>
                             <option>Gates of Olympus</option>
                             <option>Book of Dead</option>
@@ -1409,16 +1259,16 @@
                         </select>
                     </div>
                     <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
-                        <div style="background:#f5f8fc; border-radius:12px; padding:20px; text-align:center; border:1px solid #d0d9e6;">
-                            <strong style="color:#1a2332;">Gates of Olympus</strong>
-                            <p style="color:#2c3e5a; font-size:14px;">Pragmatic Play · 6×5 · Высокая</p>
+                        <div style="background:#0a1025; border-radius:12px; padding:20px; text-align:center; border:1px solid #1a2a4a;">
+                            <strong style="color:#ffffff;">Gates of Olympus</strong>
+                            <p style="color:#8aa0c0; font-size:14px;">Pragmatic Play · 6×5 · Высокая</p>
                         </div>
-                        <div style="background:#f5f8fc; border-radius:12px; padding:20px; text-align:center; border:1px solid #d0d9e6;">
-                            <strong style="color:#1a2332;">Sweet Bonanza</strong>
-                            <p style="color:#2c3e5a; font-size:14px;">Pragmatic Play · 6×5 · Высокая</p>
+                        <div style="background:#0a1025; border-radius:12px; padding:20px; text-align:center; border:1px solid #1a2a4a;">
+                            <strong style="color:#ffffff;">Sweet Bonanza</strong>
+                            <p style="color:#8aa0c0; font-size:14px;">Pragmatic Play · 6×5 · Высокая</p>
                         </div>
                     </div>
-                    <p style="text-align:center; color:#5a6f88; font-size:14px; margin-top:16px;">Инструмент сопоставляет данные карточек и не прогнозирует результат игры.</p>
+                    <p style="text-align:center; color:#5a7a9a; font-size:14px; margin-top:16px;">Инструмент сопоставляет данные карточек и не прогнозирует результат игры.</p>
                 </div>
             </div>
         </section>
@@ -1462,7 +1312,7 @@
                     <article class="content-card">
                         <a href="journal.html">
                             <figure class="card-media">
-                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%23e6edf5'/%3E%3Ctext x='600' y='315' font-family='sans-serif' font-size='32' fill='%232a7de1' text-anchor='middle' dominant-baseline='middle'%3EWild и Scatter%3C/text%3E%3C/svg%3E" alt="Wild и Scatter" width="1200" height="630" loading="lazy">
+                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%230a1025'/%3E%3Ctext x='600' y='315' font-family='sans-serif' font-size='32' fill='%234af0ff' text-anchor='middle' dominant-baseline='middle'%3EWild и Scatter%3C/text%3E%3C/svg%3E" alt="Wild и Scatter" width="1200" height="630" loading="lazy">
                             </figure>
                             <div class="card-copy">
                                 <span>Механики</span>
@@ -1475,7 +1325,7 @@
                     <article class="content-card">
                         <a href="journal.html">
                             <figure class="card-media">
-                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%23e6edf5'/%3E%3Ctext x='600' y='315' font-family='sans-serif' font-size='32' fill='%232a7de1' text-anchor='middle' dominant-baseline='middle'%3EПлатежные лимиты%3C/text%3E%3C/svg%3E" alt="Платежные лимиты" width="1200" height="630" loading="lazy">
+                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%230a1025'/%3E%3Ctext x='600' y='315' font-family='sans-serif' font-size='32' fill='%234af0ff' text-anchor='middle' dominant-baseline='middle'%3EПлатежные лимиты%3C/text%3E%3C/svg%3E" alt="Платежные лимиты" width="1200" height="630" loading="lazy">
                             </figure>
                             <div class="card-copy">
                                 <span>Платежи</span>
@@ -1488,7 +1338,7 @@
                     <article class="content-card">
                         <a href="journal.html">
                             <figure class="card-media">
-                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%23e6edf5'/%3E%3Ctext x='600' y='315' font-family='sans-serif' font-size='32' fill='%232a7de1' text-anchor='middle' dominant-baseline='middle'%EБраузер vs Приложение%3C/text%3E%3C/svg%3E" alt="Браузер или приложение" width="1200" height="630" loading="lazy">
+                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%230a1025'/%3E%3Ctext x='600' y='315' font-family='sans-serif' font-size='32' fill='%234af0ff' text-anchor='middle' dominant-baseline='middle'%EБраузер vs Приложение%3C/text%3E%3C/svg%3E" alt="Браузер или приложение" width="1200" height="630" loading="lazy">
                             </figure>
                             <div class="card-copy">
                                 <span>Приложение</span>
@@ -1548,7 +1398,7 @@
             <div class="footer-brand">
                 <div style="display:flex; align-items:center; gap:12px;">
                     <img src="logo.png" alt="MELLSTROY КАЗИНО" style="height:40px; width:auto;">
-                    <span style="font-size:20px; font-weight:800; color:#1a2332;">MELLSTROY КАЗИНО</span>
+                    <span style="font-size:20px; font-weight:800; color:#ffffff;">MELLSTROY КАЗИНО</span>
                 </div>
                 <p>Русскоязычный сайт MELLSTROY КАЗИНО для совершеннолетних пользователей стран СНГ. Азартная игра не является способом заработка.</p>
                 <div class="footer-trust"><span>HTTPS</span><span>18+</span><span>Проверка источников</span></div>
@@ -1613,7 +1463,7 @@
                 });
             }
 
-            // ===== ПЛАВНАЯ ПРОКРУТКА ДЛЯ ЯКОРНЫХ ССЫЛОК =====
+            // ===== ПЛАВНАЯ ПРОКРУТКА =====
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     const targetId = this.getAttribute('href');
