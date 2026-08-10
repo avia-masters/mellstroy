@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ваше Казино — официальный сайт</title>
+    <!-- Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* ===== ОБНУЛЕНИЕ И БАЗА ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0b0e14;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== ШАПКА ===== */
+        header {
+            background: #141a24;
+            padding: 20px 0;
+            border-bottom: 2px solid #2a3a4a;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: #f5c842;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #ffffff;
+        }
+
+        .nav a {
+            color: #b0c4de;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 500;
+            transition: 0.3s;
+            font-size: 16px;
+        }
+
+        .nav a:hover {
+            color: #f5c842;
+        }
+
+        .btn-play-header {
+            background: #f5c842;
+            color: #0b0e14 !important;
+            padding: 10px 28px;
+            border-radius: 30px;
+            font-weight: 700;
+            margin-left: 30px;
+        }
+
+        .btn-play-header:hover {
+            background: #ffd95e;
+            transform: scale(1.05);
+        }
+
+        /* ===== ГЕРОЙ ===== */
+        .hero {
+            padding: 70px 0 60px;
+            text-align: center;
+            background: linear-gradient(145deg, #0b0e14 0%, #1a232f 100%);
+            border-radius: 0 0 40px 40px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #f5c842, #f7d97e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 35px;
+            color: #b8c9e0;
+        }
+
+        .btn-main {
+            display: inline-block;
+            background: #f5c842;
+            color: #0b0e14;
+            padding: 18px 60px;
+            border-radius: 50px;
+            font-size: 24px;
+            font-weight: 800;
+            text-decoration: none;
+            box-shadow: 0 8px 30px rgba(245, 200, 66, 0.3);
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-main:hover {
+            background: #ffd95e;
+            transform: scale(1.05);
+            box-shadow: 0 12px 40px rgba(245, 200, 66, 0.5);
+        }
+
+        .btn-main i {
+            margin-right: 12px;
+        }
+
+        /* ===== ТАБЛИЦА ХАРАКТЕРИСТИК ===== */
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin: 60px 0 25px;
+            color: #f5c842;
+            text-align: center;
+        }
+
+        .params-table {
+            background: #141a24;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid #2a3a4a;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .params-table tr {
+            border-bottom: 1px solid #1f2a36;
+        }
+
+        .params-table tr:last-child {
+            border-bottom: none;
+        }
+
+        .params-table td {
+            padding: 18px 25px;
+            font-size: 16px;
+        }
+
+        .params-table td:first-child {
+            font-weight: 600;
+            color: #b0c4de;
+            width: 35%;
+        }
+
+        .params-table td:last-child {
+            color: #ffffff;
+        }
+
+        /* ===== КАРТОЧКИ ИГР ===== */
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0 30px;
+        }
+
+        .game-card {
+            background: #141a24;
+            border-radius: 20px;
+            padding: 25px 20px 30px;
+            border: 1px solid #1f2a36;
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .game-card:hover {
+            transform: translateY(-8px);
+            border-color: #f5c842;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+
+        .game-card .icon {
+            font-size: 48px;
+            color: #f5c842;
+            margin-bottom: 15px;
+        }
+
+        .game-card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .game-card .provider {
+            color: #8aa0b8;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .game-card .tags {
+            margin: 12px 0 18px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .game-card .tags span {
+            background: #1f2a36;
+            padding: 4px 14px;
+            border-radius: 30px;
+            font-size: 12px;
+            color: #b0c4de;
+        }
+
+        .btn-game {
+            display: inline-block;
+            background: #2a3a4a;
+            color: #fff;
+            padding: 12px 35px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-game:hover {
+            background: #f5c842;
+            color: #0b0e14;
+        }
+
+        /* ===== БОНУСЫ ===== */
+        .bonus-box {
+            background: linear-gradient(135deg, #1f2a36, #141a24);
+            border-radius: 20px;
+            padding: 40px;
+            border-left: 6px solid #f5c842;
+            margin: 30px 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .bonus-box .text {
+            max-width: 70%;
+        }
+
+        .bonus-box h3 {
+            font-size: 28px;
+            color: #f5c842;
+        }
+
+        .bonus-box p {
+            color: #b8c9e0;
+            margin: 10px 0 0;
+        }
+
+        /* ===== ОТЗЫВЫ ===== */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .review {
+            background: #141a24;
+            border-radius: 16px;
+            padding: 25px;
+            border: 1px solid #1f2a36;
+        }
+
+        .review .stars {
+            color: #f5c842;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .review .text {
+            font-style: italic;
+            color: #d0dcec;
+        }
+
+        .review .author {
+            margin-top: 15px;
+            color: #8aa0b8;
+            font-size: 14px;
+        }
+
+        /* ===== FAQ ===== */
+        .faq-item {
+            background: #141a24;
+            border-radius: 12px;
+            padding: 18px 25px;
+            margin-bottom: 12px;
+            border-left: 4px solid #2a3a4a;
+        }
+
+        .faq-item strong {
+            color: #f5c842;
+            display: block;
+            font-size: 18px;
+            margin-bottom: 6px;
+        }
+
+        .faq-item p {
+            color: #b8c9e0;
+            margin: 0;
+        }
+
+        /* ===== ФУТЕР ===== */
+        footer {
+            background: #0b0e14;
+            border-top: 1px solid #1f2a36;
+            padding: 40px 0 30px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        footer .legal {
+            color: #6a7f94;
+            font-size: 14px;
+            max-width: 700px;
+            margin: 0 auto 15px;
+        }
+
+        footer .legal a {
+            color: #8aa0b8;
+            text-decoration: none;
+        }
+
+        footer .age {
+            display: inline-block;
+            background: #1f2a36;
+            padding: 6px 20px;
+            border-radius: 30px;
+            color: #f5c842;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        /* ===== АДАПТИВ ===== */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            .header-flex {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .nav a {
+                margin: 0 10px;
+                font-size: 14px;
+            }
+            .btn-play-header {
+                margin-left: 0;
+            }
+            .bonus-box .text {
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+            .params-table td {
+                padding: 12px 15px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== ШАПКА ===== -->
+<header>
+    <div class="container header-flex">
+        <div class="logo">Ваше<span>Казино</span></div>
+        <div class="nav">
+            <a href="#">Главная</a>
+            <a href="#games">Игры</a>
+            <a href="#bonus">Бонусы</a>
+            <a href="#reviews">Отзывы</a>
+            <a href="#faq">FAQ</a>
+            <a href="#" class="btn-play-header"><i class="fas fa-dice"></i> Играть</a>
+        </div>
+    </div>
+</header>
+
+<!-- ===== ГЕРОЙ ===== -->
+<section class="hero">
+    <div class="container">
+        <h1>Добро пожаловать в мир азарта</h1>
+        <p>Лучшие слоты, быстрые выплаты и огромные бонусы для игроков из СНГ. Присоединяйся сейчас!</p>
+        <!-- ⚠️ ЗДЕСЬ ВАША РЕФЕРАЛЬНАЯ ССЫЛКА -->
+        <a href="https://ваша-реферальная-ссылка.com" class="btn-main" target="_blank">
+            <i class="fas fa-play"></i> Играть сейчас
+        </a>
+    </div>
+</section>
+
+<!-- ===== ТАБЛИЦА ПАРАМЕТРОВ ===== -->
+<div class="container">
+    <h2 class="section-title">О проекте</h2>
+    <table class="params-table">
+        <tr><td>Бренд</td><td>Ваше Казино</td></tr>
+        <tr><td>Доступ</td><td>Официальный сайт / HTTPS</td></tr>
+        <tr><td>Оператор</td><td>Ваша компания N.V.</td></tr>
+        <tr><td>Регион</td><td>СНГ</td></tr>
+        <tr><td>Валюты</td><td>RUB, KZT, UZS, BYN, USD, EUR</td></tr>
+        <tr><td>Возраст</td><td>18+</td></tr>
+    </table>
+</div>
+
+<!-- ===== ИГРЫ ===== -->
+<div class="container" id="games">
+    <h2 class="section-title">Популярные слоты</h2>
+    <div class="games-grid">
+        <!-- Карточка игры 1 -->
+        <div class="game-card">
+            <div class="icon"><i class="fas fa-crown"></i></div>
+            <h3>Gates of Olympus</h3>
+            <div class="provider">Pragmatic Play</div>
+            <div class="tags">
+                <span>Высокая волатильность</span>
+                <span>6×5</span>
+            </div>
+            <a href="https://ваша-реферальная-ссылка.com/game1" class="btn-game" target="_blank">Играть</a>
+        </div>
+        <!-- Карточка игры 2 -->
+        <div class="game-card">
+            <div class="icon"><i class="fas fa-gem"></i></div>
+            <h3>Sweet Bonanza</h3>
+            <div class="provider">Pragmatic Play</div>
+            <div class="tags">
+                <span>Средняя волатильность</span>
+                <span>Cluster Pays</span>
+            </div>
+            <a href="https://ваша-реферальная-ссылка.com/game2" class="btn-game" target="_blank">Играть</a>
+        </div>
+        <!-- Карточка игры 3 -->
+        <div class="game-card">
+            <div class="icon"><i class="fas fa-fire"></i></div>
+            <h3>Book of Dead</h3>
+            <div class="provider">Play'n GO</div>
+            <div class="tags">
+                <span>Высокая волатильность</span>
+                <span>5×3</span>
+            </div>
+            <a href="https://ваша-реферальная-ссылка.com/game3" class="btn-game" target="_blank">Играть</a>
+        </div>
+    </div>
+</div>
+
+<!-- ===== БОНУС ===== -->
+<div class="container" id="bonus">
+    <h2 class="section-title">Бонусы и промокоды</h2>
+    <div class="bonus-box">
+        <div class="text">
+            <h3>🎁 100% на первый депозит</h3>
+            <p>+ 50 фриспинов. Вейджер x35. Минимальный депозит — 500 RUB.</p>
+        </div>
+        <a href="https://ваша-реферальная-ссылка.com/bonus" class="btn-main" style="padding: 14px 40px; font-size: 18px;" target="_blank">
+            <i class="fas fa-gift"></i> Забрать бонус
+        </a>
+    </div>
+</div>
+
+<!-- ===== ОТЗЫВЫ ===== -->
+<div class="container" id="reviews">
+    <h2 class="section-title">Что говорят игроки</h2>
+    <div class="reviews-grid">
+        <div class="review">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <div class="text">"Отличное казино! Быстрый вывод на карту, много бонусов. Рекомендую!"</div>
+            <div class="author">— Александр, Москва</div>
+        </div>
+        <div class="review">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+            <div class="text">"Удобно платить криптовалютой. Выигрыши честные, играю уже месяц."</div>
+            <div class="author">— Дмитрий, Киев</div>
+        </div>
+        <div class="review">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <div class="text">"Красивый дизайн, всё понятно. Поддержка отвечает быстро."</div>
+            <div class="author">— Елена, Минск</div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== FAQ ===== -->
+<div class="container" id="faq">
+    <h2 class="section-title">Частые вопросы</h2>
+    <div class="faq-item">
+        <strong>Как проверить официальный сайт?</strong>
+        <p>Сверяйте домен в адресной строке, проверяйте наличие HTTPS и замка.</p>
+    </div>
+    <div class="faq-item">
+        <strong>Какие валюты доступны?</strong>
+        <p>RUB, KZT, UZS, BYN, USD, EUR и USDT — фактический список зависит от вашего аккаунта.</p>
+    </div>
+    <div class="faq-item">
+        <strong>Как получить бонус?</strong>
+        <p>Перейдите по кнопке "Забрать бонус", пополните счёт и активируйте предложение в разделе бонусов.</p>
+    </div>
+</div>
+
+<!-- ===== ФУТЕР ===== -->
+<footer>
+    <div class="container">
+        <div class="age">🔞 18+</div>
+        <div class="legal" style="margin-top: 20px;">
+            Сайт носит информационный характер. Азартная игра не является способом заработка.
+            <br>
+            <a href="#">Политика конфиденциальности</a> · <a href="#">Ответственная игра</a>
+        </div>
+        <div style="color: #4a5a6a; font-size: 13px; margin-top: 15px;">
+            © 2026 ВашеКазино. Все права защищены.
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
