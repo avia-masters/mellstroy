@@ -1,127 +1,1144 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
     <title>Ваше Казино — официальный сайт для СНГ</title>
+    <meta name="description" content="Официальный сайт Вашего Казино для СНГ: вход, регистрация, бонусы, слоты, провайдеры, приложение, платежи, отзывы и правила.">
+    <meta name="theme-color" content="#070611">
+    <link rel="canonical" href="https://ваш-сайт.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Ваше Казино — официальный сайт для СНГ">
+    <meta property="og:description" content="Официальный сайт Вашего Казино для СНГ: вход, регистрация, бонусы, слоты, провайдеры, приложение, платежи, отзывы и правила.">
+    <meta property="og:url" content="https://ваш-сайт.com/">
+    <meta property="og:image" content="https://ваш-сайт.com/assets/img/og-cover.webp">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Font Awesome для иконок -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* ===== ОБНУЛЕНИЕ И БАЗА ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #070611;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        a {
+            color: #f5c842;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #ffd95e;
+        }
+
+        /* ===== СКИП-ССЫЛКА ===== */
+        .skip {
+            position: absolute;
+            top: -100px;
+            left: 10px;
+            background: #f5c842;
+            color: #070611;
+            padding: 10px 20px;
+            border-radius: 0 0 8px 8px;
+            z-index: 1000;
+            font-weight: 700;
+        }
+
+        .skip:focus {
+            top: 0;
+        }
+
+        /* ===== ШАПКА ===== */
+        .site-header {
+            background: #0b0e14;
+            padding: 16px 0;
+            border-bottom: 2px solid #1f2a36;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .brand {
+            font-size: 28px;
+            font-weight: 800;
+            color: #f5c842;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .brand span {
+            color: #ffffff;
+        }
+
+        .brand img {
+            height: 50px;
+            width: auto;
+        }
+
+        .menu-button {
+            display: none;
+            background: none;
+            border: 1px solid #2a3a4a;
+            color: #e0e0e0;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 10px 18px;
+            flex-wrap: wrap;
+        }
+
+        .main-nav a {
+            color: #b0c4de;
+            font-weight: 500;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .main-nav a:hover {
+            color: #f5c842;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .age-badge {
+            background: #1f2a36;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+            color: #f5c842;
+            font-size: 13px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+            text-align: center;
+        }
+
+        .btn.primary {
+            background: #f5c842;
+            color: #0b0e14;
+        }
+
+        .btn.primary:hover {
+            background: #ffd95e;
+            transform: scale(1.04);
+        }
+
+        .btn.ghost {
+            background: transparent;
+            color: #b0c4de;
+            border: 1px solid #2a3a4a;
+        }
+
+        .btn.ghost:hover {
+            border-color: #f5c842;
+            color: #f5c842;
+        }
+
+        .btn.large {
+            padding: 14px 40px;
+            font-size: 18px;
+        }
+
+        /* ===== ГЕРОЙ ===== */
+        .page-hero {
+            padding: 60px 0;
+            background: linear-gradient(145deg, #070611 0%, #141a24 100%);
+            border-radius: 0 0 40px 40px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            background: #1f2a36;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #8aa0b8;
+            margin-bottom: 12px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #f5c842, #f7d97e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .page-hero h1 {
+            font-size: 44px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .page-hero p {
+            font-size: 18px;
+            color: #b8c9e0;
+            max-width: 600px;
+            margin-bottom: 24px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .stats-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            background: #0b0e14;
+            border: 1px solid #1f2a36;
+            border-radius: 20px;
+            padding: 30px 24px;
+        }
+
+        .stats-card div {
+            text-align: center;
+        }
+
+        .stats-card strong {
+            display: block;
+            font-size: 32px;
+            color: #f5c842;
+        }
+
+        .stats-card span {
+            color: #8aa0b8;
+            font-size: 14px;
+        }
+
+        /* ===== БЛОК ДОВЕРИЯ ===== */
+        .section {
+            padding: 50px 0;
+        }
+
+        .section.soft {
+            background: #0b0e14;
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+            margin-bottom: 20px;
+        }
+
+        .trust-card {
+            background: #0b0e14;
+            border: 1px solid #1f2a36;
+            border-radius: 16px;
+            padding: 24px;
+        }
+
+        .trust-card .trust-icon {
+            display: inline-block;
+            background: #1f2a36;
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 700;
+            color: #f5c842;
+            margin-bottom: 10px;
+        }
+
+        .trust-card strong {
+            display: block;
+            font-size: 18px;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+
+        .trust-card span {
+            color: #8aa0b8;
+            font-size: 14px;
+        }
+
+        .security-status {
+            font-size: 14px;
+            color: #6a7f94;
+            padding: 16px 0;
+            border-top: 1px solid #1f2a36;
+            border-bottom: 1px solid #1f2a36;
+            margin-bottom: 30px;
+        }
+
+        .security-status a {
+            color: #8aa0b8;
+        }
+
+        /* ===== НАВИГАЦИЯ ПО ОБЗОРУ ===== */
+        .overview-nav {
+            background: #0b0e14;
+            border: 1px solid #1f2a36;
+            border-radius: 16px;
+            padding: 30px;
+        }
+
+        .overview-nav h2 {
+            color: #f5c842;
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .overview-nav p {
+            color: #8aa0b8;
+            margin-bottom: 16px;
+        }
+
+        .overview-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 16px;
+        }
+
+        .overview-links a {
+            font-size: 14px;
+            color: #b0c4de;
+            background: #141a24;
+            padding: 4px 14px;
+            border-radius: 20px;
+            border: 1px solid #1f2a36;
+            transition: 0.3s;
+        }
+
+        .overview-links a:hover {
+            border-color: #f5c842;
+            color: #f5c842;
+        }
+
+        /* ===== СЕКЦИЯ ДЕЙСТВИЙ ===== */
+        .section-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+        }
+
+        .section-head .eyebrow {
+            margin-bottom: 4px;
+        }
+
+        .section-head h2 {
+            font-size: 30px;
+            color: #fff;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-grid a {
+            background: #141a24;
+            border: 1px solid #1f2a36;
+            border-radius: 16px;
+            padding: 24px;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .feature-grid a:hover {
+            border-color: #f5c842;
+            transform: translateY(-4px);
+        }
+
+        .feature-grid a strong {
+            display: block;
+            color: #fff;
+            font-size: 18px;
+        }
+
+        .feature-grid a span {
+            color: #8aa0b8;
+            font-size: 14px;
+        }
+
+        /* ===== КОНТЕНТ ===== */
+        .home-overview {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 40px;
+        }
+
+        .prose h2 {
+            font-size: 26px;
+            color: #f5c842;
+            margin: 40px 0 12px;
+            padding-top: 10px;
+        }
+
+        .prose h2:first-child {
+            margin-top: 0;
+        }
+
+        .prose p {
+            color: #d0dcec;
+            margin-bottom: 16px;
+        }
+
+        .prose a {
+            color: #f5c842;
+        }
+
+        .table-wrap {
+            overflow-x: auto;
+            margin: 16px 0 24px;
+        }
+
+        .table-wrap table {
+            width: 100%;
+            background: #0b0e14;
+            border-radius: 12px;
+            border-collapse: collapse;
+            font-size: 15px;
+        }
+
+        .table-wrap th {
+            background: #141a24;
+            color: #f5c842;
+            padding: 14px 18px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .table-wrap td {
+            padding: 12px 18px;
+            border-bottom: 1px solid #1f2a36;
+            color: #d0dcec;
+        }
+
+        .table-wrap tr:last-child td {
+            border-bottom: none;
+        }
+
+        .fact-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin: 16px 0 24px;
+        }
+
+        .fact-list div {
+            background: #0b0e14;
+            border: 1px solid #1f2a36;
+            border-radius: 12px;
+            padding: 16px 20px;
+        }
+
+        .fact-list div strong {
+            display: block;
+            color: #f5c842;
+            font-size: 15px;
+        }
+
+        .fact-list div span {
+            color: #8aa0b8;
+            font-size: 14px;
+        }
+
+        /* ===== FAQ ===== */
+        .faq details {
+            background: #0b0e14;
+            border: 1px solid #1f2a36;
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-bottom: 10px;
+        }
+
+        .faq summary {
+            font-weight: 600;
+            color: #fff;
+            cursor: pointer;
+            font-size: 17px;
+        }
+
+        .faq summary:hover {
+            color: #f5c842;
+        }
+
+        .faq details p {
+            color: #b8c9e0;
+            padding-top: 12px;
+            margin: 0;
+        }
+
+        /* ===== КАРТОЧКИ ИГР ===== */
+        .card-grid {
+            display: grid;
+            gap: 24px;
+        }
+
+        .card-grid-slots {
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        }
+
+        .content-card {
+            background: #0b0e14;
+            border: 1px solid #1f2a36;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .content-card:hover {
+            border-color: #f5c842;
+            transform: translateY(-4px);
+        }
+
+        .content-card a {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .card-media img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-copy {
+            padding: 16px 20px 20px;
+        }
+
+        .card-copy span {
+            font-size: 13px;
+            color: #8aa0b8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .card-copy h2 {
+            font-size: 18px;
+            color: #fff;
+            margin: 4px 0 8px;
+        }
+
+        .card-copy p {
+            color: #b8c9e0;
+            font-size: 14px;
+        }
+
+        .card-meta {
+            display: flex;
+            gap: 16px;
+            margin-top: 10px;
+            font-size: 13px;
+            color: #6a7f94;
+        }
+
+        /* ===== ЛОГОТИПЫ ПРОВАЙДЕРОВ ===== */
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+            gap: 16px;
+        }
+
+        .logo-grid a {
+            background: #0b0e14;
+            border: 1px solid #1f2a36;
+            border-radius: 12px;
+            padding: 16px 12px;
+            text-align: center;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .logo-grid a:hover {
+            border-color: #f5c842;
+            transform: scale(1.04);
+        }
+
+        .logo-grid img {
+            max-width: 80px;
+            height: 40px;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto 8px;
+        }
+
+        .logo-grid strong {
+            font-size: 13px;
+            color: #b0c4de;
+            display: block;
+        }
+
+        /* ===== ОТЗЫВЫ ===== */
+        .split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .split h2 {
+            font-size: 36px;
+            color: #f5c842;
+        }
+
+        .review-preview {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .review-preview article {
+            background: #0b0e14;
+            border: 1px solid #1f2a36;
+            border-radius: 12px;
+            padding: 18px 22px;
+        }
+
+        .review-preview article strong {
+            color: #f5c842;
+        }
+
+        .review-preview article p {
+            color: #d0dcec;
+            margin-top: 6px;
+        }
+
+        /* ===== АВТОРЫ ===== */
+        .authors-mini {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .authors-mini a {
+            background: #0b0e14;
+            border: 1px solid #1f2a36;
+            border-radius: 12px;
+            padding: 14px 20px;
+            text-decoration: none;
+            min-width: 140px;
+            text-align: center;
+        }
+
+        .authors-mini a:hover {
+            border-color: #f5c842;
+        }
+
+        .authors-mini .author-avatar {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: #1f2a36;
+            border-radius: 50%;
+            line-height: 40px;
+            font-weight: 700;
+            color: #f5c842;
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+
+        .authors-mini strong {
+            display: block;
+            color: #fff;
+            font-size: 15px;
+        }
+
+        .authors-mini small {
+            color: #6a7f94;
+            font-size: 12px;
+        }
+
+        /* ===== ТОК-КАРТА (сайдбар) ===== */
+        .toc-card {
+            background: #0b0e14;
+            border: 1px solid #1f2a36;
+            border-radius: 16px;
+            padding: 24px;
+            position: sticky;
+            top: 90px;
+            align-self: start;
+        }
+
+        .toc-card strong {
+            display: block;
+            color: #f5c842;
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .toc-card a {
+            display: block;
+            color: #b0c4de;
+            padding: 6px 0;
+            font-size: 14px;
+            border-bottom: 1px solid #141a24;
+        }
+
+        .toc-card a:hover {
+            color: #f5c842;
+        }
+
+        .toc-card .btn {
+            margin-top: 16px;
+            width: 100%;
+        }
+
+        /* ===== КНОПКА ПРИЗЫВА ===== */
+        .footer-cta {
+            background: linear-gradient(145deg, #0b0e14, #141a24);
+            border-top: 1px solid #1f2a36;
+            border-bottom: 1px solid #1f2a36;
+            padding: 50px 0;
+        }
+
+        .footer-cta .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-cta h2 {
+            color: #fff;
+            font-size: 28px;
+        }
+
+        .footer-cta p {
+            color: #8aa0b8;
+            max-width: 500px;
+        }
+
+        /* ===== ФУТЕР ===== */
+        .site-footer {
+            background: #070611;
+            padding: 40px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
+            gap: 30px;
+        }
+
+        .footer-brand p {
+            color: #8aa0b8;
+            font-size: 14px;
+            margin: 12px 0;
+        }
+
+        .footer-trust {
+            display: flex;
+            gap: 12px;
+        }
+
+        .footer-trust span {
+            background: #1f2a36;
+            padding: 2px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: #8aa0b8;
+        }
+
+        .footer-grid strong {
+            color: #f5c842;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .footer-grid a {
+            display: block;
+            color: #8aa0b8;
+            font-size: 14px;
+            padding: 3px 0;
+            transition: 0.3s;
+        }
+
+        .footer-grid a:hover {
+            color: #f5c842;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #1f2a36;
+            padding-top: 20px;
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            font-size: 14px;
+            color: #6a7f94;
+        }
+
+        /* ===== МОБИЛЬНАЯ ПАНЕЛЬ ===== */
+        .mobile-bar {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #0b0e14;
+            border-top: 1px solid #1f2a36;
+            padding: 10px;
+            gap: 10px;
+            z-index: 200;
+        }
+
+        .mobile-bar a {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            border-radius: 30px;
+            font-weight: 600;
+        }
+
+        .mobile-bar a:first-child {
+            background: transparent;
+            border: 1px solid #2a3a4a;
+            color: #b0c4de;
+        }
+
+        .mobile-bar a:last-child {
+            background: #f5c842;
+            color: #0b0e14;
+        }
+
+        /* ===== AGE GATE ===== */
+        .age-gate {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(7, 6, 17, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            backdrop-filter: blur(8px);
+        }
+
+        .age-gate[hidden] {
+            display: none;
+        }
+
+        .age-gate-card {
+            background: #0b0e14;
+            border: 1px solid #1f2a36;
+            border-radius: 24px;
+            padding: 40px;
+            max-width: 480px;
+            text-align: center;
+        }
+
+        .age-gate-mark {
+            display: inline-block;
+            background: #1f2a36;
+            padding: 8px 24px;
+            border-radius: 40px;
+            font-size: 24px;
+            font-weight: 800;
+            color: #f5c842;
+        }
+
+        .age-gate-card h2 {
+            color: #fff;
+            font-size: 26px;
+            margin: 16px 0 8px;
+        }
+
+        .age-gate-card p {
+            color: #8aa0b8;
+            margin-bottom: 24px;
+        }
+
+        .age-gate-actions {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .age-gate-card a {
+            display: block;
+            margin-top: 16px;
+            color: #6a7f94;
+            font-size: 14px;
+        }
+
+        /* ===== АДАПТИВ ===== */
+        @media (max-width: 992px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .home-overview {
+                grid-template-columns: 1fr;
+            }
+
+            .toc-card {
+                position: static;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .split {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-button {
+                display: block;
+            }
+
+            .main-nav {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: stretch;
+                padding: 16px 0;
+                gap: 8px;
+            }
+
+            .main-nav.open {
+                display: flex;
+            }
+
+            .header-actions {
+                width: 100%;
+                justify-content: center;
+                padding-top: 12px;
+                border-top: 1px solid #1f2a36;
+            }
+
+            .page-hero h1 {
+                font-size: 30px;
+            }
+
+            .stats-card {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-cta .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .mobile-bar {
+                display: flex;
+            }
+
+            .site-footer {
+                padding-bottom: 80px;
+            }
+
+            .overview-links a {
+                font-size: 12px;
+                padding: 3px 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-hero h1 {
+                font-size: 24px;
+            }
+
+            .btn.large {
+                padding: 12px 24px;
+                font-size: 16px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .age-gate-card {
+                padding: 24px;
+                margin: 16px;
+            }
+        }
+
+        /* ===== СКРЫТЫЕ ЭЛЕМЕНТЫ ===== */
+        [hidden] {
+            display: none !important;
+        }
+    </style>
 </head>
 <body>
 
-<!-- ШАПКА -->
-<header>
-    <div class="container header-flex">
-        <div class="logo">Ваше<span>Казино</span></div>
-        <div class="nav">
-            <a href="index.html">Главная</a>
-            <a href="games.html">Игры</a>
-            <a href="bonus.html">Бонусы</a>
-            <a href="reviews.html">Отзывы</a>
-            <a href="contacts.html">Контакты</a>
-            <a href="#" class="btn-play-header"><i class="fas fa-dice"></i> Играть</a>
+    <!-- ===== СКИП-ССЫЛКА ===== -->
+    <a class="skip" href="#content">К содержанию</a>
+
+    <!-- ===== AGE GATE ===== -->
+    <div class="age-gate" data-age-gate role="dialog" aria-modal="true" aria-labelledby="age-gate-title">
+        <div class="age-gate-card">
+            <span class="age-gate-mark">18+</span>
+            <p class="eyebrow">Подтверждение возраста</p>
+            <h2 id="age-gate-title">Вам уже исполнилось 18 лет?</h2>
+            <p>Сайт содержит информацию об азартных играх и предназначен только для совершеннолетних. Азартная игра не является способом заработка.</p>
+            <div class="age-gate-actions">
+                <button type="button" class="btn primary large" data-age-accept>Да, мне есть 18</button>
+                <button type="button" class="btn ghost large" data-age-reject>Мне нет 18</button>
+            </div>
+            <a href="#responsible">Ответственная игра и ограничения</a>
         </div>
     </div>
-</header>
 
-<!-- ГЕРОЙ -->
-<section class="hero">
-    <div class="container">
-        <h1>Ваше Казино — играй и выигрывай</h1>
-        <p>Лучшие слоты, мгновенные выплаты и щедрые бонусы для игроков из стран СНГ. Присоединяйся!</p>
-        <a href="https://ваша-реферальная-ссылка.com" class="btn-main" target="_blank">
-            <i class="fas fa-play"></i> Играть сейчас
-        </a>
-    </div>
-</section>
-
-<!-- КРАТКАЯ ТАБЛИЦА ПРОЕКТА (как на mellstroy) -->
-<div class="container">
-    <h2 class="section-title">О проекте</h2>
-    <table class="params-table">
-        <tr><td>Бренд</td><td>Ваше Казино / Ваш Бренд</td></tr>
-        <tr><td>Доступ</td><td>Официальный сайт / HTTPS</td></tr>
-        <tr><td>Оператор</td><td>YourCompany N.V.</td></tr>
-        <tr><td>Регистрация</td><td>Через кнопку на сайте</td></tr>
-        <tr><td>Регион</td><td>СНГ</td></tr>
-        <tr><td>Валюты</td><td>RUB, KZT, UZS, BYN, USD, EUR</td></tr>
-        <tr><td>Возраст</td><td>18+</td></tr>
-    </table>
-</div>
-
-<!-- ПОПУЛЯРНЫЕ ИГРЫ (краткий обзор) -->
-<div class="container">
-    <h2 class="section-title">Популярные слоты</h2>
-    <div class="games-grid">
-        <div class="game-card">
-            <div class="icon"><i class="fas fa-crown"></i></div>
-            <h3>Gates of Olympus</h3>
-            <div class="provider">Pragmatic Play</div>
-            <div class="tags"><span>Высокая волатильность</span><span>6×5</span></div>
-            <a href="#" class="btn-game">Играть</a>
+    <!-- ===== ШАПКА ===== -->
+    <header class="site-header">
+        <div class="container header-row">
+            <a class="brand" href="/">
+                <!-- Замените на свой логотип -->
+                <span>Ваше<span>Казино</span></span>
+            </a>
+            <button class="menu-button" type="button" data-menu aria-label="Открыть меню">
+                <i class="fas fa-bars"></i> Меню
+            </button>
+            <nav class="main-nav" data-nav>
+                <a href="#slots">Игры</a>
+                <a href="#comparison">Сравнить</a>
+                <a href="#providers">Провайдеры</a>
+                <a href="#bonus">Бонусы</a>
+                <a href="#app">Приложение</a>
+                <a href="#journal">Статьи</a>
+                <a href="#reviews">Отзывы</a>
+                <a href="#support">Поддержка</a>
+            </nav>
+            <div class="header-actions">
+                <span class="age-badge" aria-label="Только для совершеннолетних">18+</span>
+                <a class="btn ghost" href="#login">Войти</a>
+                <!-- ЗАМЕНИТЕ ССЫЛКУ НА ВАШУ РЕФЕРАЛЬНУЮ -->
+                <a class="btn primary" href="https://ваша-реферальная-ссылка.com" rel="nofollow sponsored">Регистрация</a>
+            </div>
         </div>
-        <div class="game-card">
-            <div class="icon"><i class="fas fa-gem"></i></div>
-            <h3>Sweet Bonanza</h3>
-            <div class="provider">Pragmatic Play</div>
-            <div class="tags"><span>Средняя волатильность</span><span>Cluster Pays</span></div>
-            <a href="#" class="btn-game">Играть</a>
-        </div>
-        <div class="game-card">
-            <div class="icon"><i class="fas fa-fire"></i></div>
-            <h3>Book of Dead</h3>
-            <div class="provider">Play'n GO</div>
-            <div class="tags"><span>Высокая волатильность</span><span>5×3</span></div>
-            <a href="#" class="btn-game">Играть</a>
-        </div>
-    </div>
-</div>
+    </header>
 
-<!-- БОНУСНЫЙ БАННЕР -->
-<div class="container">
-    <div class="bonus-box">
-        <div class="text">
-            <h3>🎁 100% на первый депозит</h3>
-            <p>+ 50 фриспинов. Вейджер x35. Минимальный депозит — 500 RUB.</p>
-        </div>
-        <a href="https://ваша-реферальная-ссылка.com/bonus" class="btn-main" style="padding: 14px 40px; font-size: 18px;" target="_blank">
-            <i class="fas fa-gift"></i> Забрать бонус
-        </a>
-    </div>
-</div>
+    <!-- ===== ОСНОВНОЕ СОДЕРЖАНИЕ ===== -->
+    <main id="content">
 
-<!-- FAQ (главная страница) -->
-<div class="container">
-    <h2 class="section-title">Частые вопросы</h2>
-    <div class="faq-item">
-        <strong>Как проверить официальный сайт?</strong>
-        <p>Сверяйте домен, проверяйте HTTPS и наличие замка в адресной строке.</p>
-    </div>
-    <div class="faq-item">
-        <strong>Какие валюты доступны?</strong>
-        <p>RUB, KZT, UZS, BYN, USD, EUR и USDT — список зависит от вашего аккаунта.</p>
-    </div>
-    <div class="faq-item">
-        <strong>Как получить бонус?</strong>
-        <p>Пополните счёт и активируйте предложение в разделе бонусов.</p>
-    </div>
-</div>
+        <!-- ===== ГЕРОЙ ===== -->
+        <section class="page-hero">
+            <div class="container hero-grid">
+                <div>
+                    <span class="eyebrow">Официальный сайт</span>
+                    <h1><span class="gradient-text">Ваше Казино</span> — лучший выбор для СНГ</h1>
+                    <p>Обзор официального проекта Ваше Казино на русском языке: вход и регистрация, игры, бонусы, мультивалютные платежи, мобильный доступ, отзывы и правила безопасности.</p>
+                    <div class="hero-buttons">
+                        <!-- ЗАМЕНИТЕ ССЫЛКУ НА ВАШУ РЕФЕРАЛЬНУЮ -->
+                        <a class="btn primary large" href="https://ваша-реферальная-ссылка.com" rel="nofollow sponsored">Начать игру</a>
+                        <a class="btn ghost large" href="#rules">Изучить правила</a>
+                    </div>
+                </div>
+                <aside class="stats-card">
+                    <div><strong>24</strong><span>обзора игр</span></div>
+                    <div><strong>20</strong><span>провайдеров</span></div>
+                    <div><strong>67</strong><span>отзывов</span></div>
+                    <div><strong>13</strong><span>валют</span></div>
+                </aside>
+            </div>
+        </section>
 
-<!-- ФУТЕР -->
-<footer>
-    <div class="container">
-        <div class="age">🔞 18+</div>
-        <div class="legal">
-            Сайт носит информационный характер. Азартная игра не является способом заработка.
-            <br>
-            <a href="#">Политика конфиденциальности</a> · <a href="#">Ответственная игра</a>
-        </div>
-        <div style="color: #4a5a6a; font-size: 13px; margin-top: 15px;">
-            © 2026 ВашеКазино. Все права защищены.
-        </div>
-    </div>
-</footer>
-
-<script src="script.js"></script>
-</body>
-</html>
+        <!-- ===== БЛОК ДОВЕРИЯ ===== -->
+        <section class="section">
+            <div class="container">
+                <div class="trust-grid">
+                    <article class="trust-card">
+                        <span class="trust-icon">TLS</span>
+                        <strong>Шифрованное соединение</strong>
+                        <span>HTTPS защищает передачу данных между браузером и сервером. Проверяйте домен и сертификат.</span>
+                    </article>
+                    <article class="trust-card">
+                        <span class="trust-icon">CSP</span>
+                        <strong>Защитные заголовки</strong>
+                        <span>CSP, HSTS, SAMEORIGIN, nosniff и ограничение разрешений снижают риск подмены контента.</span>
+                    </article>
+                    <article class="trust-card">
+                        <span class="trust-icon">✓</span>
+                        <strong>Проверка материалов</strong>
+                        <span>У каждой важной страницы есть дата обновления, источники, методология и канал для исправлений.</span>
+                    </article>
+                    <article class="trust-card">
+                        <span class="trust-icon">18+</span>
+                        <strong>Ответственная игра</strong>
+                        <span>Возрастное подтверждение, правила лимитов и отдельный раздел помощи при потере контроля.</span>
+                    </article>
+                </div>
+                <div class="security-status">
+                    Последняя успешная автоматическая проверка HTTPS и доступности: 31 июля 2026 года ·
+                    <a href="#security">как защищён сайт</a> ·
+                    <a href="#methodology">методология проверки</a> ·
+                    <a href="#editorial">редакционная политика</a> ·
+                    <a href="#regulation">регулирование</a>
+                </div>
+                <div class="overview-nav">
+                    <h2>Содержание обзора Ваше Казино</h2>
+                    <p>Быстрые ссылки ведут к входу, бонусам, играм, приложению, платежам, отзывам и другим важным разделам проекта.</p>
+                    <div class="overview-links">
+                        <a href="#official">🌐 Официальный сайт</a>
+                        <a href="#summary">📋 Краткая таблица проекта</a>
+                        <a href="#login">🔐 Вход</a>
+                        <a href="#address">🪞 Актуальный адрес</a>
+                        <a href="#slots">🎰 Слоты</a>
+                        <a href="#providers">🏢 Провайдеры</a>
+                        <a href="#reviews">🔎 Отзывы</a>
+                        <a href="#demo">🧪 Бесплатный режим</a>
+                        <a href="#bonus">🎁 Бонус</a>
+                        <a href="#app">📱 APK, iOS и PWA</a>
+                        <a href="#payments">💳 Пополнение и вывод</a>
+                        <a href="#queries">🔎 Варианты написания</a>
+                        <a href="#comparison">⚖️ Сравнение</a>
+                        <a href="#slot-t
