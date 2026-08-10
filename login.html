@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>Вход — MELLSTROY КАЗИНО</title>
+    <meta name="description" content="Войдите в MELLSTROY КАЗИНО или зарегистрируйтесь. Быстрый доступ к играм и бонусам.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #eef2f7;
+            color: #1a2332;
+            line-height: 1.6;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        a { color: #2a7de1; text-decoration: none; }
+        a:hover { color: #1a5fb4; }
+
+        /* ===== ШАПКА ===== */
+        .site-header {
+            background: #ffffff;
+            padding: 12px 0;
+            border-bottom: 2px solid #d0d9e6;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+        .header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 22px;
+            font-weight: 800;
+            color: #1a2332;
+        }
+        .brand img { height: 44px; width: auto; display: block; }
+        .menu-button {
+            display: none;
+            background: none;
+            border: 1px solid #c0cbd8;
+            color: #1a2332;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 10px 20px;
+            flex-wrap: wrap;
+        }
+        .main-nav a {
+            color: #2c3e5a;
+            font-weight: 500;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+        .main-nav a:hover { color: #2a7de1; }
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .age-badge {
+            background: #d0d9e6;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+            color: #1a2332;
+            font-size: 13px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+            text-align: center;
+        }
+        .btn.primary {
+            background: #2a7de1;
+            color: #ffffff;
+        }
+        .btn.primary:hover {
+            background: #1a5fb4;
+            transform: scale(1.04);
+            box-shadow: 0 4px 16px rgba(42, 125, 225, 0.3);
+        }
+        .btn.ghost {
+            background: transparent;
+            color: #2c3e5a;
+            border: 1px solid #c0cbd8;
+        }
+        .btn.ghost:hover {
+            border-color: #2a7de1;
+            color: #2a7de1;
+        }
+        .btn.large { padding: 14px 40px; font-size: 18px; }
+
+        /* ===== СТРАНИЦА ===== */
+        .page-header {
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+        .page-header h1 {
+            font-size: 36px;
+            color: #1a2332;
+            margin-bottom: 8px;
+        }
+        .page-header p {
+            color: #2c3e5a;
+            font-size: 18px;
+        }
+
+        .login-container {
+            max-width: 480px;
+            margin: 0 auto 60px;
+        }
+        .login-box {
+            background: #ffffff;
+            border: 1px solid #d0d9e6;
+            border-radius: 16px;
+            padding: 40px 32px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+        .login-box .form-group {
+            margin-bottom: 18px;
+        }
+        .login-box label {
+            display: block;
+            font-weight: 600;
+            color: #1a2332;
+            margin-bottom: 4px;
+        }
+        .login-box input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #d0d9e6;
+            border-radius: 10px;
+            font-size: 16px;
+            background: #f5f8fc;
+            color: #1a2332;
+            transition: 0.3s;
+        }
+        .login-box input:focus {
+            outline: none;
+            border-color: #2a7de1;
+            box-shadow: 0 0 0 3px rgba(42, 125, 225, 0.15);
+        }
+        .login-box .btn { width: 100%; }
+        .login-box .divider {
+            text-align: center;
+            margin: 20px 0;
+            color: #5a6f88;
+            font-size: 14px;
+            position: relative;
+        }
+        .login-box .divider::before,
+        .login-box .divider::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 40%;
+            height: 1px;
+            background: #d0d9e6;
+        }
+        .login-box .divider::before { left: 0; }
+        .login-box .divider::after { right: 0; }
+        .login-box .register-link {
+            text-align: center;
+            margin-top: 16px;
+            color: #2c3e5a;
+        }
+        .login-box .register-link a { font-weight: 600; }
+        .login-box .forgot-link {
+            text-align: right;
+            font-size: 14px;
+            margin-top: 4px;
+        }
+
+        /* ===== ФУТЕР ===== */
+        .site-footer {
+            background: #ffffff;
+            padding: 40px 0 20px;
+            border-top: 1px solid #d0d9e6;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+            gap: 30px;
+        }
+        .footer-brand p {
+            color: #2c3e5a;
+            font-size: 14px;
+            margin: 12px 0;
+        }
+        .footer-trust {
+            display: flex;
+            gap: 12px;
+        }
+        .footer-trust span {
+            background: #e6edf5;
+            padding: 2px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: #2c3e5a;
+        }
+        .footer-grid strong {
+            color: #1a2332;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .footer-grid a {
+            display: block;
+            color: #2c3e5a;
+            font-size: 14px;
+            padding: 3px 0;
+            transition: 0.3s;
+        }
+        .footer-grid a:hover { color: #2a7de1; }
+        .footer-bottom {
+            border-top: 1px solid #d0d9e6;
+            padding-top: 20px;
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            font-size: 14px;
+            color: #5a6f88;
+        }
+
+        .mobile-bar {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #ffffff;
+            border-top: 1px solid #d0d9e6;
+            padding: 10px;
+            gap: 10px;
+            z-index: 200;
+        }
+        .mobile-bar a {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            border-radius: 30px;
+            font-weight: 600;
+        }
+        .mobile-bar a:first-child {
+            background: transparent;
+            border: 1px solid #c0cbd8;
+            color: #1a2332;
+        }
+        .mobile-bar a:last-child {
+            background: #2a7de1;
+            color: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            .menu-button { display: block; }
+            .main-nav {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: stretch;
+                padding: 16px 0;
+                gap: 8px;
+            }
+            .main-nav.open { display: flex; }
+            .header-actions {
+                width: 100%;
+                justify-content: center;
+                padding-top: 12px;
+                border-top: 1px solid #d0d9e6;
+            }
+            .footer-grid { grid-template-columns: 1fr; }
+            .page-header h1 { font-size: 28px; }
+            .login-box { padding: 28px 20px; }
+            .mobile-bar { display: flex; }
+            .site-footer { padding-bottom: 80px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== ШАПКА ===== -->
+    <header class="site-header">
+        <div class="container header-row">
+            <a class="brand" href="/">
+                <img src="logo.png" alt="MELLSTROY КАЗИНО" loading="lazy">
+                <span>MELLSTROY КАЗИНО</span>
+            </a>
+            <button class="menu-button" type="button" data-menu>
+                <i class="fas fa-bars"></i> Меню
+            </button>
+            <nav class="main-nav" data-nav>
+                <a href="index.html">Главная</a>
+                <a href="games.html">Игры</a>
+                <a href="bonus.html">Бонусы</a>
+                <a href="providers.html">Провайдеры</a>
+                <a href="app.html">Приложение</a>
+                <a href="reviews.html">Отзывы</a>
+                <a href="contacts.html">Контакты</a>
+                <a href="rules.html">Правила</a>
+            </nav>
+            <div class="header-actions">
+                <span class="age-badge">18+</span>
+                <a class="btn ghost" href="login.html">Войти</a>
+                <a class="btn primary" href="https://mell636.com/?p=hkmq" rel="nofollow sponsored">Регистрация</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== ОСНОВНОЕ СОДЕРЖАНИЕ ===== -->
+    <main>
+        <div class="container">
+            <div class="page-header">
+                <h1>🔐 Вход в аккаунт</h1>
+                <p>Войдите в MELLSTROY КАЗИНО и начните игру</p>
+            </div>
+
+            <div class="login-container">
+                <div class="login-box">
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="loginEmail">Email или логин</label>
+                            <input type="text" id="loginEmail" placeholder="Введите email или логин">
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword">Пароль</label>
+                            <input type="password" id="loginPassword" placeholder="Введите пароль">
+                        </div>
+                        <div class="forgot-link">
+                            <a href="#">Забыли пароль?</a>
+                        </div>
+                        <button type="submit" class="btn primary large">Войти</button>
+                    </form>
+
+                    <div class="divider">или</div>
+
+                    <a href="https://mell636.com/?p=hkmq" class="btn ghost large" rel="nofollow sponsored" style="width:100%; display:block; text-align:center;">
+                        <i class="fas fa-user-plus"></i> Зарегистрироваться
+                    </a>
+
+                    <div class="register-link">
+                        Нет аккаунта? <a href="https://mell636.com/?p=hkmq" rel="nofollow sponsored">Создать</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ===== ФУТЕР ===== -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div style="display:flex; align-items:center; gap:12px;">
+                    <img src="logo.png" alt="MELLSTROY КАЗИНО" style="height:40px; width:auto;">
+                    <span style="font-size:20px; font-weight:800; color:#1a2332;">MELLSTROY КАЗИНО</span>
+                </div>
+                <p>Русскоязычный сайт MELLSTROY КАЗИНО для совершеннолетних пользователей стран СНГ.</p>
+                <div class="footer-trust"><span>HTTPS</span><span>18+</span><span>Проверка источников</span></div>
+            </div>
+            <div><strong>Аккаунт</strong><a href="index.html">Главная</a><a href="login.html">Вход</a><a href="bonus.html">Бонусы</a></div>
+            <div><strong>Игры</strong><a href="games.html">Каталог игр</a><a href="providers.html">Провайдеры</a></div>
+            <div><strong>Платежи</strong><a href="app.html">Приложение</a></div>
+            <div><strong>Контакты</strong><a href="contacts.html">Контакты</a><a href="reviews.html">Отзывы</a></div>
+        </div>
+        <div class="container footer-bottom">
+            <span>© 2026 MELLSTROY КАЗИНО</span>
+            <span>Оператор: MelGames N.V.</span>
+            <span>Русская версия · СНГ · 18+</span>
+        </div>
+    </footer>
+
+    <div class="mobile-bar">
+        <a href="login.html">Войти</a>
+        <a href="https://mell636.com/?p=hkmq" rel="nofollow sponsored">Играть</a>
+    </div>
+
+    <script>
+        const menuBtn = document.querySelector('[data-menu]');
+        const nav = document.querySelector('[data-nav]');
+        if (menuBtn && nav) {
+            menuBtn.addEventListener('click', function() {
+                nav.classList.toggle('open');
+                menuBtn.innerHTML = nav.classList.contains('open') ?
+                    '<i class="fas fa-times"></i> Закрыть' :
+                    '<i class="fas fa-bars"></i> Меню';
+            });
+        }
+
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Функция входа временно недоступна. Пожалуйста, используйте кнопку "Регистрация" для перехода на сайт казино.');
+        });
+    </script>
+
+</body>
+</html>
