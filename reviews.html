@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>Отзывы — MELLSTROY КАЗИНО</title>
+    <meta name="description" content="Честные отзывы игроков о MELLSTROY КАЗИНО. Оценка 4.61 из 5. Читайте мнения о выплатах, бонусах и качестве игр.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #eef2f7;
+            color: #1a2332;
+            line-height: 1.6;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        a { color: #2a7de1; text-decoration: none; }
+        a:hover { color: #1a5fb4; }
+
+        /* ===== ШАПКА ===== */
+        .site-header {
+            background: #ffffff;
+            padding: 12px 0;
+            border-bottom: 2px solid #d0d9e6;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+        .header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 22px;
+            font-weight: 800;
+            color: #1a2332;
+        }
+        .brand img { height: 44px; width: auto; display: block; }
+        .menu-button {
+            display: none;
+            background: none;
+            border: 1px solid #c0cbd8;
+            color: #1a2332;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 10px 20px;
+            flex-wrap: wrap;
+        }
+        .main-nav a {
+            color: #2c3e5a;
+            font-weight: 500;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+        .main-nav a:hover { color: #2a7de1; }
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .age-badge {
+            background: #d0d9e6;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+            color: #1a2332;
+            font-size: 13px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+            text-align: center;
+        }
+        .btn.primary {
+            background: #2a7de1;
+            color: #ffffff;
+        }
+        .btn.primary:hover {
+            background: #1a5fb4;
+            transform: scale(1.04);
+            box-shadow: 0 4px 16px rgba(42, 125, 225, 0.3);
+        }
+        .btn.ghost {
+            background: transparent;
+            color: #2c3e5a;
+            border: 1px solid #c0cbd8;
+        }
+        .btn.ghost:hover {
+            border-color: #2a7de1;
+            color: #2a7de1;
+        }
+
+        /* ===== СТРАНИЦА ===== */
+        .page-header {
+            padding: 40px 0 20px;
+        }
+        .page-header h1 {
+            font-size: 36px;
+            color: #1a2332;
+            margin-bottom: 8px;
+        }
+        .page-header p {
+            color: #2c3e5a;
+            font-size: 18px;
+            max-width: 700px;
+        }
+
+        .rating-summary {
+            background: #ffffff;
+            border: 1px solid #d0d9e6;
+            border-radius: 16px;
+            padding: 24px 30px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .rating-summary .score {
+            font-size: 42px;
+            font-weight: 800;
+            color: #2a7de1;
+        }
+        .rating-summary .stars {
+            color: #f5b342;
+            font-size: 28px;
+        }
+        .rating-summary .count {
+            color: #2c3e5a;
+            font-size: 16px;
+        }
+
+        .reviews-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+        .review-item {
+            background: #ffffff;
+            border: 1px solid #d0d9e6;
+            border-radius: 16px;
+            padding: 20px 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            transition: 0.3s;
+        }
+        .review-item:hover {
+            border-color: #2a7de1;
+        }
+        .review-item .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 8px;
+        }
+        .review-item .author {
+            font-weight: 600;
+            color: #1a2332;
+        }
+        .review-item .date {
+            color: #5a6f88;
+            font-size: 14px;
+        }
+        .review-item .stars {
+            color: #f5b342;
+            font-size: 18px;
+        }
+        .review-item .text {
+            color: #2c3e5a;
+            margin-top: 6px;
+        }
+        .review-item .tags {
+            display: flex;
+            gap: 8px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+        .review-item .tags span {
+            background: #e6edf5;
+            padding: 2px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            color: #2c3e5a;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 40px;
+        }
+        .pagination a {
+            padding: 8px 16px;
+            border-radius: 8px;
+            background: #ffffff;
+            border: 1px solid #d0d9e6;
+            color: #2c3e5a;
+            transition: 0.3s;
+        }
+        .pagination a:hover,
+        .pagination a.active {
+            background: #2a7de1;
+            color: #ffffff;
+            border-color: #2a7de1;
+        }
+
+        /* ===== ФУТЕР ===== */
+        .site-footer {
+            background: #ffffff;
+            padding: 40px 0 20px;
+            border-top: 1px solid #d0d9e6;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+            gap: 30px;
+        }
+        .footer-brand p {
+            color: #2c3e5a;
+            font-size: 14px;
+            margin: 12px 0;
+        }
+        .footer-trust {
+            display: flex;
+            gap: 12px;
+        }
+        .footer-trust span {
+            background: #e6edf5;
+            padding: 2px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: #2c3e5a;
+        }
+        .footer-grid strong {
+            color: #1a2332;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .footer-grid a {
+            display: block;
+            color: #2c3e5a;
+            font-size: 14px;
+            padding: 3px 0;
+            transition: 0.3s;
+        }
+        .footer-grid a:hover { color: #2a7de1; }
+        .footer-bottom {
+            border-top: 1px solid #d0d9e6;
+            padding-top: 20px;
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            font-size: 14px;
+            color: #5a6f88;
+        }
+
+        .mobile-bar {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #ffffff;
+            border-top: 1px solid #d0d9e6;
+            padding: 10px;
+            gap: 10px;
+            z-index: 200;
+        }
+        .mobile-bar a {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            border-radius: 30px;
+            font-weight: 600;
+        }
+        .mobile-bar a:first-child {
+            background: transparent;
+            border: 1px solid #c0cbd8;
+            color: #1a2332;
+        }
+        .mobile-bar a:last-child {
+            background: #2a7de1;
+            color: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            .menu-button { display: block; }
+            .main-nav {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: stretch;
+                padding: 16px 0;
+                gap: 8px;
+            }
+            .main-nav.open { display: flex; }
+            .header-actions {
+                width: 100%;
+                justify-content: center;
+                padding-top: 12px;
+                border-top: 1px solid #d0d9e6;
+            }
+            .footer-grid { grid-template-columns: 1fr; }
+            .page-header h1 { font-size: 28px; }
+            .rating-summary { flex-direction: column; text-align: center; }
+            .mobile-bar { display: flex; }
+            .site-footer { padding-bottom: 80px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== ШАПКА ===== -->
+    <header class="site-header">
+        <div class="container header-row">
+            <a class="brand" href="/">
+                <img src="logo.png" alt="MELLSTROY КАЗИНО" loading="lazy">
+                <span>MELLSTROY КАЗИНО</span>
+            </a>
+            <button class="menu-button" type="button" data-menu>
+                <i class="fas fa-bars"></i> Меню
+            </button>
+            <nav class="main-nav" data-nav>
+                <a href="index.html">Главная</a>
+                <a href="games.html">Игры</a>
+                <a href="bonus.html">Бонусы</a>
+                <a href="providers.html">Провайдеры</a>
+                <a href="app.html">Приложение</a>
+                <a href="reviews.html">Отзывы</a>
+                <a href="contacts.html">Контакты</a>
+            </nav>
+            <div class="header-actions">
+                <span class="age-badge">18+</span>
+                <a class="btn ghost" href="login.html">Войти</a>
+                <a class="btn primary" href="https://mell636.com/?p=hkmq" rel="nofollow sponsored">Регистрация</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== ОСНОВНОЕ СОДЕРЖАНИЕ ===== -->
+    <main>
+        <div class="container">
+            <div class="page-header">
+                <h1>⭐ Отзывы игроков</h1>
+                <p>Реальные мнения наших пользователей о MELLSTROY КАЗИНО. Оценка основана на 67 отзывах.</p>
+            </div>
+
+            <!-- ===== РЕЙТИНГ ===== -->
+            <div class="rating-summary">
+                <div>
+                    <span class="score">4.61</span>
+                    <span style="color:#2c3e5a; font-size:18px;">из 5</span>
+                </div>
+                <div>
+                    <span class="stars">★★★★★</span>
+                    <span style="color:#2c3e5a; display:block; font-size:14px;">67 отзывов</span>
+                </div>
+                <div>
+                    <span style="color:#2c3e5a; font-size:14px;">89% рекомендуют</span>
+                </div>
+            </div>
+
+            <!-- ===== СПИСОК ОТЗЫВОВ ===== -->
+            <div class="reviews-list">
+
+                <div class="review-item">
+                    <div class="header">
+                        <span class="author">Иван</span>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <div class="text">Я уже не новичок, но в MELLSTROY КАЗИНО разобрался быстро. Крупные кнопки, понятный интерфейс. Выводят на карту без проблем. Огромное спасибо разработчикам.</div>
+                    <div class="tags">
+                        <span>Быстрый вывод</span>
+                        <span>Удобный интерфейс</span>
+                    </div>
+                </div>
+
+                <div class="review-item">
+                    <div class="header">
+                        <span class="author">Анна</span>
+                        <span class="stars">★★★★☆</span>
+                    </div>
+                    <div class="text">MELLSTROY КАЗИНО — красивое оформление, но иногда подвисает анимация. В остальном всё отлично. Выплаты честные. Ставлю 4, надеюсь на улучшение.</div>
+                    <div class="tags">
+                        <span>Красивый дизайн</span>
+                        <span>Честные выплаты</span>
+                    </div>
+                </div>
+
+                <div class="review-item">
+                    <div class="header">
+                        <span class="author">Дмитрий</span>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <div class="text">Пополнил MELLSTROY КАЗИНО через криптокошелёк — быстро и без комиссий. Выиграл 10 тысяч, вывел в той же валюте. Очень удобно для тех, кто предпочитает крипту.</div>
+                    <div class="tags">
+                        <span>Криптовалюта</span>
+                        <span>Без комиссий</span>
+                    </div>
+                </div>
+
+                <div class="review-item">
+                    <div class="header">
+                        <span class="author">Екатерина</span>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <div class="text">Поддержка отвечает быстро, помогли решить вопрос с верификацией за 10 минут. Игры запускаются без лагов. Рекомендую!</div>
+                    <div class="tags">
+                        <span>Быстрая поддержка</span>
+                        <span>Стабильная работа</span>
+                    </div>
+                </div>
+
+                <div class="review-item">
+                    <div class="header">
+                        <span class="author">Олег</span>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <div class="text">Большой выбор слотов, есть все популярные игры. Бонусы реально дают, вывести удалось без проблем. Играю здесь уже месяц.</div>
+                    <div class="tags">
+                        <span>Большой выбор</span>
+                        <span>Реальные бонусы</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ===== ПАГИНАЦИЯ ===== -->
+            <div class="pagination">
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">→</a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ===== ФУТЕР ===== -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div style="display:flex; align-items:center; gap:12px;">
+                    <img src="logo.png" alt="MELLSTROY КАЗИНО" style="height:40px; width:auto;">
+                    <span style="font-size:20px; font-weight:800; color:#1a2332;">MELLSTROY КАЗИНО</span>
+                </div>
+                <p>Русскоязычный сайт MELLSTROY КАЗИНО для совершеннолетних пользователей стран СНГ.</p>
+                <div class="footer-trust"><span>HTTPS</span><span>18+</span><span>Проверка источников</span></div>
+            </div>
+            <div><strong>Аккаунт</strong><a href="index.html">Главная</a><a href="login.html">Вход</a><a href="bonus.html">Бонусы</a></div>
+            <div><strong>Игры</strong><a href="games.html">Каталог игр</a><a href="providers.html">Провайдеры</a></div>
+            <div><strong>Платежи</strong><a href="app.html">Приложение</a></div>
+            <div><strong>Контакты</strong><a href="contacts.html">Контакты</a><a href="reviews.html">Отзывы</a></div>
+        </div>
+        <div class="container footer-bottom">
+            <span>© 2026 MELLSTROY КАЗИНО</span>
+            <span>Оператор: MelGames N.V.</span>
+            <span>Русская версия · СНГ · 18+</span>
+        </div>
+    </footer>
+
+    <div class="mobile-bar">
+        <a href="login.html">Войти</a>
+        <a href="https://mell636.com/?p=hkmq" rel="nofollow sponsored">Играть</a>
+    </div>
+
+    <script>
+        const menuBtn = document.querySelector('[data-menu]');
+        const nav = document.querySelector('[data-nav]');
+        if (menuBtn && nav) {
+            menuBtn.addEventListener('click', function() {
+                nav.classList.toggle('open');
+                menuBtn.innerHTML = nav.classList.contains('open') ?
+                    '<i class="fas fa-times"></i> Закрыть' :
+                    '<i class="fas fa-bars"></i> Меню';
+            });
+        }
+    </script>
+
+</body>
+</html>
