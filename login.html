@@ -10,23 +10,26 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #eef2f7;
-            color: #1a2332;
+            background: linear-gradient(160deg, #0a1628 0%, #0f2040 50%, #0a1628 100%);
+            color: #d0e4f8;
             line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        a { color: #2a7de1; text-decoration: none; }
-        a:hover { color: #1a5fb4; }
+        a { color: #4ab8ff; text-decoration: none; transition: 0.3s; }
+        a:hover { color: #7acbff; text-shadow: 0 0 25px rgba(74, 184, 255, 0.2); }
 
-        /* ===== ШАПКА ===== */
         .site-header {
-            background: #ffffff;
+            background: rgba(10, 22, 40, 0.85);
+            backdrop-filter: blur(20px);
             padding: 12px 0;
-            border-bottom: 2px solid #d0d9e6;
+            border-bottom: 1px solid rgba(26, 48, 80, 0.5);
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            box-shadow: 0 4px 40px rgba(0, 0, 0, 0.3);
         }
         .header-row {
             display: flex;
@@ -41,14 +44,14 @@
             gap: 12px;
             font-size: 22px;
             font-weight: 800;
-            color: #1a2332;
+            color: #ffffff;
         }
         .brand img { height: 44px; width: auto; display: block; }
         .menu-button {
             display: none;
             background: none;
-            border: 1px solid #c0cbd8;
-            color: #1a2332;
+            border: 1px solid #1a3050;
+            color: #d0e4f8;
             padding: 8px 16px;
             border-radius: 8px;
             cursor: pointer;
@@ -61,23 +64,23 @@
             flex-wrap: wrap;
         }
         .main-nav a {
-            color: #2c3e5a;
+            color: #8aaac8;
             font-weight: 500;
             font-size: 15px;
             transition: 0.3s;
         }
-        .main-nav a:hover { color: #2a7de1; }
+        .main-nav a:hover { color: #4ab8ff; text-shadow: 0 0 20px rgba(74, 184, 255, 0.15); }
         .header-actions {
             display: flex;
             align-items: center;
             gap: 12px;
         }
         .age-badge {
-            background: #d0d9e6;
+            background: #1a3050;
             padding: 4px 12px;
             border-radius: 20px;
             font-weight: 700;
-            color: #1a2332;
+            color: #4ab8ff;
             font-size: 13px;
         }
         .btn {
@@ -92,80 +95,86 @@
             text-align: center;
         }
         .btn.primary {
-            background: #2a7de1;
+            background: linear-gradient(135deg, #1a7acc, #4ab8ff);
             color: #ffffff;
+            box-shadow: 0 4px 25px rgba(26, 124, 204, 0.3);
         }
         .btn.primary:hover {
-            background: #1a5fb4;
             transform: scale(1.04);
-            box-shadow: 0 4px 16px rgba(42, 125, 225, 0.3);
+            box-shadow: 0 8px 40px rgba(74, 184, 255, 0.35);
         }
         .btn.ghost {
             background: transparent;
-            color: #2c3e5a;
-            border: 1px solid #c0cbd8;
+            color: #8aaac8;
+            border: 1px solid #1a3050;
         }
         .btn.ghost:hover {
-            border-color: #2a7de1;
-            color: #2a7de1;
+            border-color: #4ab8ff;
+            color: #4ab8ff;
+            box-shadow: 0 0 30px rgba(74, 184, 255, 0.05);
         }
         .btn.large { padding: 14px 40px; font-size: 18px; }
 
-        /* ===== СТРАНИЦА ===== */
         .page-header {
             padding: 40px 0 20px;
             text-align: center;
         }
         .page-header h1 {
             font-size: 36px;
-            color: #1a2332;
+            color: #ffffff;
             margin-bottom: 8px;
         }
         .page-header p {
-            color: #2c3e5a;
+            color: #8aaac8;
             font-size: 18px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #1a7acc, #4ab8ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .login-container {
             max-width: 480px;
             margin: 0 auto 60px;
+            flex: 1;
         }
         .login-box {
-            background: #ffffff;
-            border: 1px solid #d0d9e6;
+            background: rgba(17, 29, 53, 0.6);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(26, 48, 80, 0.4);
             border-radius: 16px;
             padding: 40px 32px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
         }
-        .login-box .form-group {
-            margin-bottom: 18px;
-        }
+        .login-box .form-group { margin-bottom: 18px; }
         .login-box label {
             display: block;
             font-weight: 600;
-            color: #1a2332;
+            color: #ffffff;
             margin-bottom: 4px;
         }
         .login-box input {
             width: 100%;
             padding: 12px 16px;
-            border: 1px solid #d0d9e6;
+            border: 1px solid rgba(26, 48, 80, 0.4);
             border-radius: 10px;
             font-size: 16px;
-            background: #f5f8fc;
-            color: #1a2332;
+            background: rgba(10, 22, 40, 0.4);
+            color: #d0e4f8;
             transition: 0.3s;
         }
         .login-box input:focus {
             outline: none;
-            border-color: #2a7de1;
-            box-shadow: 0 0 0 3px rgba(42, 125, 225, 0.15);
+            border-color: #4ab8ff;
+            box-shadow: 0 0 25px rgba(74, 184, 255, 0.1);
         }
         .login-box .btn { width: 100%; }
         .login-box .divider {
             text-align: center;
             margin: 20px 0;
-            color: #5a6f88;
+            color: #5a7a9a;
             font-size: 14px;
             position: relative;
         }
@@ -176,14 +185,14 @@
             top: 50%;
             width: 40%;
             height: 1px;
-            background: #d0d9e6;
+            background: rgba(26, 48, 80, 0.3);
         }
         .login-box .divider::before { left: 0; }
         .login-box .divider::after { right: 0; }
         .login-box .register-link {
             text-align: center;
             margin-top: 16px;
-            color: #2c3e5a;
+            color: #8aaac8;
         }
         .login-box .register-link a { font-weight: 600; }
         .login-box .forgot-link {
@@ -192,11 +201,12 @@
             margin-top: 4px;
         }
 
-        /* ===== ФУТЕР ===== */
         .site-footer {
-            background: #ffffff;
+            background: rgba(10, 22, 40, 0.8);
+            backdrop-filter: blur(10px);
             padding: 40px 0 20px;
-            border-top: 1px solid #d0d9e6;
+            border-top: 1px solid rgba(26, 48, 80, 0.3);
+            margin-top: auto;
         }
         .footer-grid {
             display: grid;
@@ -204,7 +214,7 @@
             gap: 30px;
         }
         .footer-brand p {
-            color: #2c3e5a;
+            color: #8aaac8;
             font-size: 14px;
             margin: 12px 0;
         }
@@ -213,34 +223,36 @@
             gap: 12px;
         }
         .footer-trust span {
-            background: #e6edf5;
+            background: rgba(26, 48, 80, 0.4);
             padding: 2px 12px;
             border-radius: 20px;
             font-size: 12px;
-            color: #2c3e5a;
+            color: #8aaac8;
         }
         .footer-grid strong {
-            color: #1a2332;
+            background: linear-gradient(135deg, #1a7acc, #4ab8ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             display: block;
             margin-bottom: 10px;
         }
         .footer-grid a {
             display: block;
-            color: #2c3e5a;
+            color: #8aaac8;
             font-size: 14px;
             padding: 3px 0;
             transition: 0.3s;
         }
-        .footer-grid a:hover { color: #2a7de1; }
+        .footer-grid a:hover { color: #4ab8ff; }
         .footer-bottom {
-            border-top: 1px solid #d0d9e6;
+            border-top: 1px solid rgba(26, 48, 80, 0.3);
             padding-top: 20px;
             margin-top: 30px;
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
             font-size: 14px;
-            color: #5a6f88;
+            color: #5a7a9a;
         }
 
         .mobile-bar {
@@ -249,8 +261,9 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: #ffffff;
-            border-top: 1px solid #d0d9e6;
+            background: rgba(10, 22, 40, 0.95);
+            backdrop-filter: blur(16px);
+            border-top: 1px solid rgba(26, 48, 80, 0.4);
             padding: 10px;
             gap: 10px;
             z-index: 200;
@@ -264,11 +277,11 @@
         }
         .mobile-bar a:first-child {
             background: transparent;
-            border: 1px solid #c0cbd8;
-            color: #1a2332;
+            border: 1px solid #1a3050;
+            color: #8aaac8;
         }
         .mobile-bar a:last-child {
-            background: #2a7de1;
+            background: linear-gradient(135deg, #1a7acc, #4ab8ff);
             color: #ffffff;
         }
 
@@ -287,10 +300,10 @@
                 width: 100%;
                 justify-content: center;
                 padding-top: 12px;
-                border-top: 1px solid #d0d9e6;
+                border-top: 1px solid rgba(26, 48, 80, 0.3);
             }
-            .footer-grid { grid-template-columns: 1fr; }
             .page-header h1 { font-size: 28px; }
+            .footer-grid { grid-template-columns: 1fr; }
             .login-box { padding: 28px 20px; }
             .mobile-bar { display: flex; }
             .site-footer { padding-bottom: 80px; }
@@ -299,10 +312,9 @@
 </head>
 <body>
 
-    <!-- ===== ШАПКА ===== -->
     <header class="site-header">
         <div class="container header-row">
-            <a class="brand" href="/">
+            <a class="brand" href="index.html">
                 <img src="logo.png" alt="MELLSTROY КАЗИНО" loading="lazy">
                 <span>MELLSTROY КАЗИНО</span>
             </a>
@@ -327,11 +339,10 @@
         </div>
     </header>
 
-    <!-- ===== ОСНОВНОЕ СОДЕРЖАНИЕ ===== -->
     <main>
         <div class="container">
             <div class="page-header">
-                <h1>🔐 Вход в аккаунт</h1>
+                <h1>🔐 <span class="gradient-text">Вход в аккаунт</span></h1>
                 <p>Войдите в MELLSTROY КАЗИНО и начните игру</p>
             </div>
 
@@ -363,17 +374,15 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </main>
 
-    <!-- ===== ФУТЕР ===== -->
     <footer class="site-footer">
         <div class="container footer-grid">
             <div class="footer-brand">
                 <div style="display:flex; align-items:center; gap:12px;">
                     <img src="logo.png" alt="MELLSTROY КАЗИНО" style="height:40px; width:auto;">
-                    <span style="font-size:20px; font-weight:800; color:#1a2332;">MELLSTROY КАЗИНО</span>
+                    <span style="font-size:20px; font-weight:800; color:#ffffff;">MELLSTROY КАЗИНО</span>
                 </div>
                 <p>Русскоязычный сайт MELLSTROY КАЗИНО для совершеннолетних пользователей стран СНГ.</p>
                 <div class="footer-trust"><span>HTTPS</span><span>18+</span><span>Проверка источников</span></div>
