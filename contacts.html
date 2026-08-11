@@ -4,29 +4,30 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
     <title>Контакты — MELLSTROY КАЗИНО</title>
-    <meta name="description" content="Свяжитесь с MELLSTROY КАЗИНО через Telegram. Поддержка 24/7. Быстрые ответы на все вопросы.">
+    <meta name="description" content="Свяжитесь с MELLSTROY КАЗИНО через Telegram. Поддержка 24/7.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #eef2f7;
-            color: #1a2332;
+            background: linear-gradient(160deg, #0a1628 0%, #0f2040 50%, #0a1628 100%);
+            color: #d0e4f8;
             line-height: 1.6;
+            min-height: 100vh;
         }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        a { color: #2a7de1; text-decoration: none; }
-        a:hover { color: #1a5fb4; }
+        a { color: #4ab8ff; text-decoration: none; transition: 0.3s; }
+        a:hover { color: #7acbff; text-shadow: 0 0 25px rgba(74, 184, 255, 0.2); }
 
-        /* ===== ШАПКА ===== */
         .site-header {
-            background: #ffffff;
+            background: rgba(10, 22, 40, 0.85);
+            backdrop-filter: blur(20px);
             padding: 12px 0;
-            border-bottom: 2px solid #d0d9e6;
+            border-bottom: 1px solid rgba(26, 48, 80, 0.5);
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            box-shadow: 0 4px 40px rgba(0, 0, 0, 0.3);
         }
         .header-row {
             display: flex;
@@ -41,14 +42,14 @@
             gap: 12px;
             font-size: 22px;
             font-weight: 800;
-            color: #1a2332;
+            color: #ffffff;
         }
         .brand img { height: 44px; width: auto; display: block; }
         .menu-button {
             display: none;
             background: none;
-            border: 1px solid #c0cbd8;
-            color: #1a2332;
+            border: 1px solid #1a3050;
+            color: #d0e4f8;
             padding: 8px 16px;
             border-radius: 8px;
             cursor: pointer;
@@ -61,23 +62,23 @@
             flex-wrap: wrap;
         }
         .main-nav a {
-            color: #2c3e5a;
+            color: #8aaac8;
             font-weight: 500;
             font-size: 15px;
             transition: 0.3s;
         }
-        .main-nav a:hover { color: #2a7de1; }
+        .main-nav a:hover { color: #4ab8ff; text-shadow: 0 0 20px rgba(74, 184, 255, 0.15); }
         .header-actions {
             display: flex;
             align-items: center;
             gap: 12px;
         }
         .age-badge {
-            background: #d0d9e6;
+            background: #1a3050;
             padding: 4px 12px;
             border-radius: 20px;
             font-weight: 700;
-            color: #1a2332;
+            color: #4ab8ff;
             font-size: 13px;
         }
         .btn {
@@ -92,37 +93,43 @@
             text-align: center;
         }
         .btn.primary {
-            background: #2a7de1;
+            background: linear-gradient(135deg, #1a7acc, #4ab8ff);
             color: #ffffff;
+            box-shadow: 0 4px 25px rgba(26, 124, 204, 0.3);
         }
         .btn.primary:hover {
-            background: #1a5fb4;
             transform: scale(1.04);
-            box-shadow: 0 4px 16px rgba(42, 125, 225, 0.3);
+            box-shadow: 0 8px 40px rgba(74, 184, 255, 0.35);
         }
         .btn.ghost {
             background: transparent;
-            color: #2c3e5a;
-            border: 1px solid #c0cbd8;
+            color: #8aaac8;
+            border: 1px solid #1a3050;
         }
         .btn.ghost:hover {
-            border-color: #2a7de1;
-            color: #2a7de1;
+            border-color: #4ab8ff;
+            color: #4ab8ff;
+            box-shadow: 0 0 30px rgba(74, 184, 255, 0.05);
         }
 
-        /* ===== СТРАНИЦА ===== */
         .page-header {
             padding: 40px 0 20px;
         }
         .page-header h1 {
             font-size: 36px;
-            color: #1a2332;
+            color: #ffffff;
             margin-bottom: 8px;
         }
         .page-header p {
-            color: #2c3e5a;
+            color: #8aaac8;
             font-size: 18px;
             max-width: 700px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #1a7acc, #4ab8ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .contacts-grid {
@@ -132,87 +139,86 @@
             margin-bottom: 40px;
         }
         .contact-card {
-            background: #ffffff;
-            border: 1px solid #d0d9e6;
+            background: rgba(17, 29, 53, 0.6);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(26, 48, 80, 0.4);
             border-radius: 16px;
             padding: 28px;
             text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
             transition: 0.3s;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
         }
         .contact-card:hover {
-            border-color: #2a7de1;
+            border-color: #4ab8ff;
             transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(42, 125, 225, 0.12);
+            box-shadow: 0 8px 40px rgba(74, 184, 255, 0.05);
         }
-        .contact-card .icon {
-            font-size: 48px;
-            margin-bottom: 12px;
-            display: block;
-        }
+        .contact-card .icon { font-size: 48px; margin-bottom: 12px; display: block; }
         .contact-card h3 {
             font-size: 20px;
-            color: #1a2332;
+            color: #ffffff;
             margin-bottom: 6px;
         }
         .contact-card p {
-            color: #2c3e5a;
+            color: #8aaac8;
             margin-bottom: 12px;
         }
         .contact-card .link {
             font-weight: 600;
-            color: #2a7de1;
+            color: #4ab8ff;
             font-size: 18px;
         }
+        .contact-card .link:hover { color: #7acbff; }
 
         .faq-section {
-            background: #ffffff;
-            border: 1px solid #d0d9e6;
+            background: rgba(17, 29, 53, 0.5);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(26, 48, 80, 0.4);
             border-radius: 16px;
             padding: 28px;
             margin-bottom: 30px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
         }
         .faq-section h3 {
             font-size: 22px;
-            color: #1a2332;
+            color: #ffffff;
             margin-bottom: 16px;
         }
         .faq-item {
             padding: 12px 0;
-            border-bottom: 1px solid #e6edf5;
+            border-bottom: 1px solid rgba(26, 48, 80, 0.3);
         }
         .faq-item:last-child { border-bottom: none; }
         .faq-item strong {
             display: block;
-            color: #1a2332;
+            color: #ffffff;
         }
         .faq-item p {
-            color: #2c3e5a;
+            color: #8aaac8;
             font-size: 15px;
             margin-top: 4px;
         }
 
         .warning-box {
-            background: #fff5e6;
+            background: rgba(26, 48, 80, 0.4);
             border: 1px solid #f5b342;
             border-radius: 16px;
             padding: 24px 28px;
             margin-bottom: 40px;
         }
         .warning-box h3 {
-            color: #b34700;
+            color: #f5b342;
             margin-bottom: 8px;
         }
         .warning-box p {
-            color: #2c3e5a;
+            color: #d0e4f8;
         }
 
-        /* ===== ФУТЕР ===== */
         .site-footer {
-            background: #ffffff;
+            background: rgba(10, 22, 40, 0.8);
+            backdrop-filter: blur(10px);
             padding: 40px 0 20px;
-            border-top: 1px solid #d0d9e6;
+            border-top: 1px solid rgba(26, 48, 80, 0.3);
         }
         .footer-grid {
             display: grid;
@@ -220,7 +226,7 @@
             gap: 30px;
         }
         .footer-brand p {
-            color: #2c3e5a;
+            color: #8aaac8;
             font-size: 14px;
             margin: 12px 0;
         }
@@ -229,34 +235,36 @@
             gap: 12px;
         }
         .footer-trust span {
-            background: #e6edf5;
+            background: rgba(26, 48, 80, 0.4);
             padding: 2px 12px;
             border-radius: 20px;
             font-size: 12px;
-            color: #2c3e5a;
+            color: #8aaac8;
         }
         .footer-grid strong {
-            color: #1a2332;
+            background: linear-gradient(135deg, #1a7acc, #4ab8ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             display: block;
             margin-bottom: 10px;
         }
         .footer-grid a {
             display: block;
-            color: #2c3e5a;
+            color: #8aaac8;
             font-size: 14px;
             padding: 3px 0;
             transition: 0.3s;
         }
-        .footer-grid a:hover { color: #2a7de1; }
+        .footer-grid a:hover { color: #4ab8ff; }
         .footer-bottom {
-            border-top: 1px solid #d0d9e6;
+            border-top: 1px solid rgba(26, 48, 80, 0.3);
             padding-top: 20px;
             margin-top: 30px;
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
             font-size: 14px;
-            color: #5a6f88;
+            color: #5a7a9a;
         }
 
         .mobile-bar {
@@ -265,8 +273,9 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: #ffffff;
-            border-top: 1px solid #d0d9e6;
+            background: rgba(10, 22, 40, 0.95);
+            backdrop-filter: blur(16px);
+            border-top: 1px solid rgba(26, 48, 80, 0.4);
             padding: 10px;
             gap: 10px;
             z-index: 200;
@@ -280,11 +289,11 @@
         }
         .mobile-bar a:first-child {
             background: transparent;
-            border: 1px solid #c0cbd8;
-            color: #1a2332;
+            border: 1px solid #1a3050;
+            color: #8aaac8;
         }
         .mobile-bar a:last-child {
-            background: #2a7de1;
+            background: linear-gradient(135deg, #1a7acc, #4ab8ff);
             color: #ffffff;
         }
 
@@ -303,22 +312,21 @@
                 width: 100%;
                 justify-content: center;
                 padding-top: 12px;
-                border-top: 1px solid #d0d9e6;
+                border-top: 1px solid rgba(26, 48, 80, 0.3);
             }
-            .footer-grid { grid-template-columns: 1fr; }
             .page-header h1 { font-size: 28px; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .contacts-grid { grid-template-columns: 1fr; }
             .mobile-bar { display: flex; }
             .site-footer { padding-bottom: 80px; }
-            .contacts-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ===== ШАПКА ===== -->
     <header class="site-header">
         <div class="container header-row">
-            <a class="brand" href="/">
+            <a class="brand" href="index.html">
                 <img src="logo.png" alt="MELLSTROY КАЗИНО" loading="lazy">
                 <span>MELLSTROY КАЗИНО</span>
             </a>
@@ -333,6 +341,7 @@
                 <a href="app.html">Приложение</a>
                 <a href="reviews.html">Отзывы</a>
                 <a href="contacts.html">Контакты</a>
+                <a href="rules.html">Правила</a>
             </nav>
             <div class="header-actions">
                 <span class="age-badge">18+</span>
@@ -342,17 +351,14 @@
         </div>
     </header>
 
-    <!-- ===== ОСНОВНОЕ СОДЕРЖАНИЕ ===== -->
     <main>
         <div class="container">
             <div class="page-header">
-                <h1>📞 Контакты и поддержка</h1>
+                <h1>📞 <span class="gradient-text">Контакты и поддержка</span></h1>
                 <p>Свяжитесь с нами любым удобным способом. Мы на связи 24/7 и всегда готовы помочь.</p>
             </div>
 
-            <!-- ===== КОНТАКТЫ ===== -->
             <div class="contacts-grid">
-
                 <div class="contact-card">
                     <span class="icon">💬</span>
                     <h3>Telegram</h3>
@@ -373,16 +379,13 @@
                     <p>Проверьте раздел FAQ — возможно, ответ уже есть.</p>
                     <a href="#faq" class="link">Перейти к FAQ</a>
                 </div>
-
             </div>
 
-            <!-- ===== ВАЖНОЕ ПРЕДУПРЕЖДЕНИЕ ===== -->
             <div class="warning-box">
                 <h3>⚠️ Внимание! Безопасность</h3>
                 <p>Никогда не передавайте свой пароль и одноразовые коды третьим лицам. Для входа используйте только официальный сайт. Мы никогда не запрашиваем ваши пароли в Telegram.</p>
             </div>
 
-            <!-- ===== FAQ ===== -->
             <div class="faq-section" id="faq">
                 <h3>❓ Часто задаваемые вопросы</h3>
 
@@ -405,19 +408,16 @@
                     <strong>Можно ли играть с телефона?</strong>
                     <p>Да, у нас есть удобное мобильное приложение и адаптированная версия сайта для всех устройств.</p>
                 </div>
-
             </div>
-
         </div>
     </main>
 
-    <!-- ===== ФУТЕР ===== -->
     <footer class="site-footer">
         <div class="container footer-grid">
             <div class="footer-brand">
                 <div style="display:flex; align-items:center; gap:12px;">
                     <img src="logo.png" alt="MELLSTROY КАЗИНО" style="height:40px; width:auto;">
-                    <span style="font-size:20px; font-weight:800; color:#1a2332;">MELLSTROY КАЗИНО</span>
+                    <span style="font-size:20px; font-weight:800; color:#ffffff;">MELLSTROY КАЗИНО</span>
                 </div>
                 <p>Русскоязычный сайт MELLSTROY КАЗИНО для совершеннолетних пользователей стран СНГ.</p>
                 <div class="footer-trust"><span>HTTPS</span><span>18+</span><span>Проверка источников</span></div>
