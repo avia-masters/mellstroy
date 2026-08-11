@@ -3,9 +3,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    
     <!-- Фавикон -->
-<link rel="icon" href="favicon.png" type="image/png">
-<link rel="apple-touch-icon" href="favicon.png">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    
     <title>Отзывы — MELLSTROY КАЗИНО</title>
     <meta name="description" content="Честные отзывы игроков о MELLSTROY КАЗИНО. Оценка 4.61 из 5.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -165,6 +167,7 @@
             flex-direction: column;
             gap: 16px;
             margin-bottom: 30px;
+            min-height: 200px;
         }
         .review-item {
             background: rgba(17, 29, 53, 0.5);
@@ -174,6 +177,11 @@
             padding: 20px 24px;
             transition: 0.3s;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            animation: fadeIn 0.3s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         .review-item:hover { border-color: #4ab8ff; }
         .review-item .header {
@@ -216,15 +224,21 @@
             gap: 8px;
             margin-bottom: 40px;
         }
-        .pagination a {
+        .pagination button {
             padding: 8px 16px;
             border-radius: 8px;
             background: rgba(17, 29, 53, 0.5);
             border: 1px solid rgba(26, 48, 80, 0.4);
             color: #8aaac8;
             transition: 0.3s;
+            cursor: pointer;
+            font-size: 15px;
         }
-        .pagination a:hover, .pagination a.active {
+        .pagination button:hover {
+            background: rgba(26, 48, 80, 0.4);
+            color: #4ab8ff;
+        }
+        .pagination button.active {
             background: linear-gradient(135deg, #1a7acc, #4ab8ff);
             color: #ffffff;
             border-color: #4ab8ff;
@@ -340,6 +354,7 @@
 </head>
 <body>
 
+    <!-- ===== ШАПКА ===== -->
     <header class="site-header">
         <div class="container header-row">
             <a class="brand" href="index.html">
@@ -367,6 +382,7 @@
         </div>
     </header>
 
+    <!-- ===== ОСНОВНОЕ СОДЕРЖАНИЕ ===== -->
     <main>
         <div class="container">
             <div class="page-header">
@@ -374,6 +390,7 @@
                 <p>Реальные мнения наших пользователей о MELLSTROY КАЗИНО. Оценка основана на 67 отзывах.</p>
             </div>
 
+            <!-- ===== РЕЙТИНГ ===== -->
             <div class="rating-summary">
                 <div>
                     <span class="score">4.61</span>
@@ -388,53 +405,19 @@
                 </div>
             </div>
 
-            <div class="reviews-list">
-                <div class="review-item">
-                    <div class="header">
-                        <span class="author">Иван</span>
-                        <span class="stars">★★★★★</span>
-                    </div>
-                    <div class="text">Я уже не новичок, но в MELLSTROY КАЗИНО разобрался быстро. Крупные кнопки, понятный интерфейс. Выводят на карту без проблем.</div>
-                    <div class="tags"><span>Быстрый вывод</span><span>Удобный интерфейс</span></div>
-                </div>
-
-                <div class="review-item">
-                    <div class="header">
-                        <span class="author">Анна</span>
-                        <span class="stars">★★★★☆</span>
-                    </div>
-                    <div class="text">MELLSTROY КАЗИНО — красивое оформление, но иногда подвисает анимация. В остальном всё отлично. Выплаты честные.</div>
-                    <div class="tags"><span>Красивый дизайн</span><span>Честные выплаты</span></div>
-                </div>
-
-                <div class="review-item">
-                    <div class="header">
-                        <span class="author">Дмитрий</span>
-                        <span class="stars">★★★★★</span>
-                    </div>
-                    <div class="text">Пополнил MELLSTROY КАЗИНО через криптокошелёк — быстро и без комиссий. Выиграл 10 тысяч, вывел в той же валюте.</div>
-                    <div class="tags"><span>Криптовалюта</span><span>Без комиссий</span></div>
-                </div>
-
-                <div class="review-item">
-                    <div class="header">
-                        <span class="author">Екатерина</span>
-                        <span class="stars">★★★★★</span>
-                    </div>
-                    <div class="text">Поддержка отвечает быстро, помогли решить вопрос с верификацией за 10 минут. Игры запускаются без лагов.</div>
-                    <div class="tags"><span>Быстрая поддержка</span><span>Стабильная работа</span></div>
-                </div>
+            <!-- ===== СПИСОК ОТЗЫВОВ (все) ===== -->
+            <div class="reviews-list" id="reviewsContainer">
+                <!-- Отзывы будут вставлены сюда через JavaScript -->
             </div>
 
-            <div class="pagination">
-                <a href="#" class="active">1</a>
-                <a href="#">2</a>
-                <a href="#">3</a>
-                <a href="#">→</a>
+            <!-- ===== ПАГИНАЦИЯ ===== -->
+            <div class="pagination" id="paginationContainer">
+                <!-- Кнопки пагинации будут вставлены сюда через JavaScript -->
             </div>
         </div>
     </main>
 
+    <!-- ===== ФУТЕР ===== -->
     <footer class="site-footer">
         <div class="container footer-grid">
             <div class="footer-brand">
@@ -462,7 +445,107 @@
         <a href="https://mell636.com/?p=hkmq" rel="nofollow sponsored">Играть</a>
     </div>
 
+    <!-- ===== СКРИПТ ===== -->
     <script>
+        // ===== ВСЕ ОТЗЫВЫ =====
+        const allReviews = [
+            {
+                author: "Иван",
+                rating: 5,
+                text: "Я уже не новичок, но в MELLSTROY КАЗИНО разобрался быстро. Крупные кнопки, понятный интерфейс. Выводят на карту без проблем.",
+                tags: ["Быстрый вывод", "Удобный интерфейс"]
+            },
+            {
+                author: "Анна",
+                rating: 4,
+                text: "MELLSTROY КАЗИНО — красивое оформление, но иногда подвисает анимация. В остальном всё отлично. Выплаты честные.",
+                tags: ["Красивый дизайн", "Честные выплаты"]
+            },
+            {
+                author: "Дмитрий",
+                rating: 5,
+                text: "Пополнил MELLSTROY КАЗИНО через криптокошелёк — быстро и без комиссий. Выиграл 10 тысяч, вывел в той же валюте.",
+                tags: ["Криптовалюта", "Без комиссий"]
+            },
+            {
+                author: "Екатерина",
+                rating: 5,
+                text: "Поддержка отвечает быстро, помогли решить вопрос с верификацией за 10 минут. Игры запускаются без лагов.",
+                tags: ["Быстрая поддержка", "Стабильная работа"]
+            },
+            {
+                author: "Олег",
+                rating: 4,
+                text: "Большой выбор слотов, есть все популярные игры. Бонусы реально дают, вывести удалось без проблем.",
+                tags: ["Большой выбор", "Реальные бонусы"]
+            },
+            {
+                author: "Мария",
+                rating: 5,
+                text: "Играю в MELLSTROY КАЗИНО уже месяц, ни разу не было проблем с выводом. Приятный дизайн и быстрая работа сайта.",
+                tags: ["Быстрый вывод", "Красивый дизайн"]
+            }
+        ];
+
+        // ===== НАСТРОЙКИ =====
+        const reviewsPerPage = 3;
+        let currentPage = 1;
+        const totalPages = Math.ceil(allReviews.length / reviewsPerPage);
+
+        // ===== ФУНКЦИЯ: ПОКАЗАТЬ ОТЗЫВЫ =====
+        function renderReviews(page) {
+            const container = document.getElementById('reviewsContainer');
+            const start = (page - 1) * reviewsPerPage;
+            const end = start + reviewsPerPage;
+            const pageReviews = allReviews.slice(start, end);
+
+            container.innerHTML = pageReviews.map(review => {
+                const stars = '★'.repeat(review.rating) + '☆'.repeat(5 - review.rating);
+                const tags = review.tags.map(tag => `<span>${tag}</span>`).join('');
+                return `
+                    <div class="review-item">
+                        <div class="header">
+                            <span class="author">${review.author}</span>
+                            <span class="stars">${stars}</span>
+                        </div>
+                        <div class="text">${review.text}</div>
+                        <div class="tags">${tags}</div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // ===== ФУНКЦИЯ: ПОКАЗАТЬ КНОПКИ ПАГИНАЦИИ =====
+        function renderPagination(current) {
+            const container = document.getElementById('paginationContainer');
+            let html = '';
+            
+            // Кнопка "←"
+            html += `<button onclick="goToPage(${current - 1})" ${current === 1 ? 'disabled style="opacity:0.3;cursor:default;"' : ''}>←</button>`;
+
+            // Номера страниц
+            for (let i = 1; i <= totalPages; i++) {
+                html += `<button onclick="goToPage(${i})" class="${i === current ? 'active' : ''}">${i}</button>`;
+            }
+
+            // Кнопка "→"
+            html += `<button onclick="goToPage(${current + 1})" ${current === totalPages ? 'disabled style="opacity:0.3;cursor:default;"' : ''}>→</button>`;
+
+            container.innerHTML = html;
+        }
+
+        // ===== ФУНКЦИЯ: ПЕРЕЙТИ НА СТРАНИЦУ =====
+        function goToPage(page) {
+            if (page < 1 || page > totalPages) return;
+            currentPage = page;
+            renderReviews(currentPage);
+            renderPagination(currentPage);
+            
+            // Прокрутка к началу списка отзывов
+            document.getElementById('reviewsContainer').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // ===== МОБИЛЬНОЕ МЕНЮ =====
         const menuBtn = document.querySelector('[data-menu]');
         const nav = document.querySelector('[data-nav]');
         if (menuBtn && nav) {
@@ -473,6 +556,10 @@
                     '<i class="fas fa-bars"></i> Меню';
             });
         }
+
+        // ===== ЗАПУСК =====
+        renderReviews(1);
+        renderPagination(1);
     </script>
 
 </body>
